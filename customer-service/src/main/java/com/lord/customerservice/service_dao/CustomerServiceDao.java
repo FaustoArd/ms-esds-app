@@ -2,6 +2,7 @@ package com.lord.customerservice.service_dao;
 
 import java.util.List;
 
+import com.lord.customerservice.exception.CustomerNotFoundException;
 import com.lord.customerservice.model.Customer;
 
 public interface CustomerServiceDao {
@@ -12,6 +13,6 @@ public interface CustomerServiceDao {
 	
 	public Customer findById(Long id);
 	
-	public void deleteById(Long id);
+	public void deleteById(Long id)throws CustomerNotFoundException;
 
 }
