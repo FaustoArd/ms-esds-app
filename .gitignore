@@ -7,3 +7,4 @@
 *.tar
 *.zip
 *.yml
+./distance-service/target/classes/com/lord/distanceservice/configuration/KeyManager.*
