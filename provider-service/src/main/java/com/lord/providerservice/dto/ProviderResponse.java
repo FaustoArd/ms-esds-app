@@ -1,9 +1,8 @@
 package com.lord.providerservice.dto;
 
-public class ProviderDto {
+public class ProviderResponse {
 	
-	private Long id;
-	
+
 	private String socialName;
 	
 	private String fantasyName;
@@ -19,17 +18,6 @@ public class ProviderDto {
 	private String locality;
 	
 	private String city;
-	
-	
-	
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getSocialName() {
 		return socialName;
@@ -94,11 +82,5 @@ public class ProviderDto {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	
-
-	
-	
-	
-	
 
 }

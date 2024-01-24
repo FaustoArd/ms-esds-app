@@ -22,6 +22,11 @@ public class Address {
 	
 	private String city;
 	
+	private Long customerId;
+	
+	private Long providerId;
+	
+	
 	public Address() {
 		super();
 	}
@@ -64,6 +69,19 @@ public class Address {
 
 	public void setCity(String city) {
 		this.city = city;
+	}
+	
+	public Long getProviderId() {
+		return providerId;
+	}
+	public void setProviderId(Long providerId) {
+		this.providerId = providerId;
+	}
+	public Long getCustomerId() {
+		return customerId;
+	}
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
 	}
 	
 	
