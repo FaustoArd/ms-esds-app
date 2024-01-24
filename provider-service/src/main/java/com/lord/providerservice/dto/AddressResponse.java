@@ -9,6 +9,10 @@ public class AddressResponse {
 	private String locality;
 
 	private String city;
+	
+	private Long providerId;
+	
+	private Long customerId;
 
 	public String getStreet() {
 		return street;
@@ -41,5 +45,22 @@ public class AddressResponse {
 	public void setCity(String city) {
 		this.city = city;
 	}
+
+	public Long getProviderId() {
+		return providerId;
+	}
+
+	public void setProviderId(Long providerId) {
+		this.providerId = providerId;
+	}
+
+	public Long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
+	}
+	
 
 }

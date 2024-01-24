@@ -1,6 +1,7 @@
 package com.lord.providerservice.mapper;
 
 import java.util.List;
+import java.util.ListIterator;
 
 import org.springframework.stereotype.Component;
 
@@ -28,12 +29,13 @@ public class ProviderMapperImpl implements ProviderMapper {
 	
 
 	@Override
-	public ProviderResponse toReponse(Provider provider) {
+	public ProviderResponse toProviderResponse(Provider provider) {
 		if(provider==null) {
 			return null;
 		}
 		ProviderResponse providerResponse = new ProviderResponse();
 		
+		providerResponse.setId(provider.getId());
 		providerResponse.setSocialName(provider.getSocialName());
 		providerResponse.setFantasyName(provider.getFantasyName());
 		providerResponse.setPhone(provider.getPhone());
@@ -43,7 +45,8 @@ public class ProviderMapperImpl implements ProviderMapper {
 	}
 	
 	@Override
-	public ProviderResponse toResponse(ProviderResponse providerResponse, AddressResponse addressResponse) {
+	public ProviderResponse toFullProviderResponse(ProviderResponse providerResponse, AddressResponse addressResponse) {
+		
 		providerResponse.setStreet(addressResponse.getStreet());
 		providerResponse.setHouseNumber(addressResponse.getHouseNumber());
 		providerResponse.setLocality(addressResponse.getLocality());
@@ -71,13 +74,35 @@ public class ProviderMapperImpl implements ProviderMapper {
 		if(providers==null) {
 			return null;
 		}
-		List<ProviderResponse> responseList = providers.stream().map(this::toReponse).toList();
+		List<ProviderResponse> responseList = providers.stream().map(this::toProviderResponse).toList();
 		
 		if(addressesResponses==null) {
 			return responseList;
 		}
-		responseList = addressesResponses.stream().map(this::addressToResponse).toList();
-		
+		ListIterator<AddressResponse> addressessIt = addressesResponses.listIterator();
+		while(addressessIt.hasNext()) {
+			responseList.stream().map(res ->{
+				ProviderResponse response = new ProviderResponse();
+				
+				if(res.getId().equals(addressessIt.next().getProviderId())) {
+					AddressResponse addressCurrentResponse = addressessIt.next();
+					response.setId(res.getId());
+					response.setSocialName(res.getSocialName());
+					response.setFantasyName(res.getFantasyName());
+					response.setEmail(res.getEmail());
+					response.setPhone(res.getPhone());
+					response.setStreet(addressCurrentResponse.getStreet());
+					response.setHouseNumber(addressCurrentResponse.getHouseNumber());
+					response.setLocality(addressCurrentResponse.getLocality());
+					response.setCity(addressCurrentResponse.getCity());
+					
+				}
+				if(addressessIt.nextIndex()==addressesResponses.size()) {
+					return responseList;
+				}
+				return response;
+			}).toList();
+		}
 		return responseList;
 	}
 
