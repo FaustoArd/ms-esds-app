@@ -17,6 +17,6 @@ public interface ProviderMapper {
 	
 	public ProviderResponse addressToResponse(AddressResponse addressResponse);
 	
-	public List<ProviderResponse> toResponseList(List<Provider> providers, List<AddressResponse> addressesResponses);
+
 
 }

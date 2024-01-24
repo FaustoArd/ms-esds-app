@@ -13,7 +13,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import com.lord.providerservice.dto.AddressResponse;
 import com.lord.providerservice.dto.ProviderResponse;
 import com.lord.providerservice.mapper.ProviderMapper;
@@ -68,15 +67,5 @@ public class MapperTest {
 
 	}
 
-	@Test
-	@Order(2)
-	void listToProviderResponse() {
-
-		List<Provider> providersResponses = Arrays.asList(provider, provider2);
-		List<AddressResponse> addressesResponses = Arrays.asList(addressResponse, addressResponse2);
-
-		List<ProviderResponse> responses = providerMapper.toResponseList(providersResponses, addressesResponses);
-		assertEquals(responses.get(0).getFantasyName(), "Mega");
-		assertEquals(responses.get(0).getStreet(), "Hamilton");
-	}
+	
 }

@@ -69,42 +69,7 @@ public class ProviderMapperImpl implements ProviderMapper {
 		return providerResponse;
 	}
 
-	@Override
-	public List<ProviderResponse> toResponseList(List<Provider> providers, List<AddressResponse> addressesResponses) {
-		if(providers==null) {
-			return null;
-		}
-		List<ProviderResponse> responseList = providers.stream().map(this::toProviderResponse).toList();
-		
-		if(addressesResponses==null) {
-			return responseList;
-		}
-		ListIterator<AddressResponse> addressessIt = addressesResponses.listIterator();
-		while(addressessIt.hasNext()) {
-			responseList.stream().map(res ->{
-				ProviderResponse response = new ProviderResponse();
-				
-				if(res.getId().equals(addressessIt.next().getProviderId())) {
-					AddressResponse addressCurrentResponse = addressessIt.next();
-					response.setId(res.getId());
-					response.setSocialName(res.getSocialName());
-					response.setFantasyName(res.getFantasyName());
-					response.setEmail(res.getEmail());
-					response.setPhone(res.getPhone());
-					response.setStreet(addressCurrentResponse.getStreet());
-					response.setHouseNumber(addressCurrentResponse.getHouseNumber());
-					response.setLocality(addressCurrentResponse.getLocality());
-					response.setCity(addressCurrentResponse.getCity());
-					
-				}
-				if(addressessIt.nextIndex()==addressesResponses.size()) {
-					return responseList;
-				}
-				return response;
-			}).toList();
-		}
-		return responseList;
-	}
+	
 
 
 	
