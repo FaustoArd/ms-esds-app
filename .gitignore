@@ -7,4 +7,4 @@
 *.tar
 *.zip
 *.yml
-KeyManager.*
+distance-service/src/main/java/com/lord/distanceservice/configuration/KeyManager.java
