@@ -16,7 +16,7 @@ public class Address {
 	
 	private String street;
 	
-	private String number;
+	private String houseNumber;
 	
 	private String locality;
 	
@@ -47,12 +47,12 @@ public class Address {
 		this.street = street;
 	}
 
-	public String getNumber() {
-		return number;
+	public String getHouseNumber() {
+		return houseNumber;
 	}
 
-	public void setNumber(String number) {
-		this.number = number;
+	public void setHouseNumber(String houseNumber) {
+		this.houseNumber = houseNumber;
 	}
 
 	public String getLocality() {

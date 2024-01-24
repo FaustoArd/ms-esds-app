@@ -12,13 +12,13 @@ import com.lord.addressservice.model.Address;
 public class AddressMapperImpl implements AddressMapper {
 
 	@Override
-	public Address toAddress(AddressDto addressDto) {
+	public Address dtoToAddress(AddressDto addressDto) {
 		if(addressDto==null) {
 			return null;
 		}
 		Address address = new Address();
 		address.setStreet(addressDto.getStreet());
-		address.setNumber(addressDto.getNumber());
+		address.setHouseNumber(addressDto.getHouseNumber());
 		address.setLocality(addressDto.getLocality());
 		address.setCity(addressDto.getCity());
 		address.setCustomerId(addressDto.getCustomerId());
@@ -27,24 +27,40 @@ public class AddressMapperImpl implements AddressMapper {
 		return address;
 	}
 	
-	public AddressResponse toResponse(Address address) {
+	@Override
+	public AddressResponse dtoToResponse(AddressDto addressDto) {
+		if(addressDto==null) {
+			return null;
+		}
+		AddressResponse addressResponse = new AddressResponse();
+		addressResponse.setId(addressDto.getId());
+		addressResponse.setStreet(addressDto.getStreet());
+		addressResponse.setHouseNumber(addressDto.getHouseNumber());
+		addressResponse.setLocality(addressDto.getLocality());
+		addressResponse.setCity(addressDto.getCity());
+		return addressResponse;
+	}
+	
+	@Override
+	public AddressResponse addressToResponse(Address address) {
 		if(address==null) {
 			return null;
 		}
 		AddressResponse addressResponse = new AddressResponse();
 		addressResponse.setStreet(address.getStreet());
-		addressResponse.setNumber(address.getNumber());
+		addressResponse.setHouseNumber(address.getHouseNumber());
 		addressResponse.setLocality(address.getLocality());
 		addressResponse.setCity(address.getCity());
 		
 		return addressResponse;
 	}
 	
-	public List<AddressResponse> toResponseList(List<Address> addresses){
+	@Override
+	public List<AddressResponse> addressToResponseList(List<Address> addresses){
 		if(addresses==null) {
 			return null;
 		}
-		List<AddressResponse> responseList = addresses.stream().map(this::toResponse).toList();
+		List<AddressResponse> responseList = addresses.stream().map(this::addressToResponse).toList();
 		
 		return responseList;
 		

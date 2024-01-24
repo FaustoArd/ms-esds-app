@@ -1,8 +1,6 @@
-package com.lord.addressservice.dto;
+package com.lord.providerservice.dto;
 
-public class AddressResponse {
-	
-	private Long id;
+public class AddressDto {
 
 	private String street;
 
@@ -11,16 +9,13 @@ public class AddressResponse {
 	private String locality;
 
 	private String city;
+	
+	private Long providerId;
+	
+	private Long customerId;
 
 	public String getStreet() {
 		return street;
-	}
-	
-	public Long setId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public void setStreet(String street) {
@@ -50,6 +45,21 @@ public class AddressResponse {
 	public void setCity(String city) {
 		this.city = city;
 	}
+
+	public Long getProviderId() {
+		return providerId;
+	}
+
+	public void setProviderId(Long providerId) {
+		this.providerId = providerId;
+	}
+
+	public Long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
+	}
 	
 }
-

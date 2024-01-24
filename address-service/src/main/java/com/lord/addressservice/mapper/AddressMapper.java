@@ -8,10 +8,12 @@ import com.lord.addressservice.model.Address;
 
 public interface AddressMapper {
 	
-	public Address toAddress(AddressDto addressDto);
+	public Address dtoToAddress(AddressDto addressDto);
 	
-	public AddressResponse toResponse(Address address);
+	public AddressResponse addressToResponse(Address address);
 	
-	public List<AddressResponse> toResponseList(List<Address> addresses);
+	public AddressResponse dtoToResponse(AddressDto addressDto);
+	
+	public List<AddressResponse> addressToResponseList(List<Address> addresses);
 
 }

@@ -3,17 +3,17 @@ package com.lord.addressservice.dto;
 public class AddressDto {
 
 	private Long id;
-	
+
 	private String street;
-	
-	private String number;
-	
+
+	private String houseNumber;
+
 	private String locality;
-	
+
 	private String city;
-	
+
 	private Long customerId;
-	
+
 	private Long providerId;
 
 	public Long getId() {
@@ -32,12 +32,12 @@ public class AddressDto {
 		this.street = street;
 	}
 
-	public String getNumber() {
-		return number;
+	public String getHouseNumber() {
+		return houseNumber;
 	}
 
-	public void setNumber(String number) {
-		this.number = number;
+	public void setHouseNumber(String houseNumber) {
+		this.houseNumber = houseNumber;
 	}
 
 	public String getLocality() {
@@ -71,6 +71,5 @@ public class AddressDto {
 	public void setProviderId(Long providerId) {
 		this.providerId = providerId;
 	}
-	
-	
+
 }

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.lord.providerservice.dao.ProviderDao;
+import com.lord.providerservice.dto.AddressDto;
 import com.lord.providerservice.dto.AddressResponse;
 import com.lord.providerservice.dto.ProviderDto;
 import com.lord.providerservice.dto.ProviderResponse;
@@ -36,7 +37,7 @@ public class ProviderServiceImpl implements ProviderService {
 	public ProviderResponse createProvider(ProviderDto providerDto) {
 		Provider provider = providerMapper.toProvider(providerDto);
 		Provider savedProvider = providerDao.save(provider);
-		AddressResponse addressResponse = providerMapper.toAddressResponse(providerDto);
+		AddressResponse addressResponse = providerMapper.dtoToAddressResponse(providerDto,savedProvider.getId());
 		AddressResponse savedAddressResponse = saveAddress(addressResponse);
 
 		return providerMapper.toFullProviderResponse(savedProvider, savedAddressResponse);
@@ -44,6 +45,7 @@ public class ProviderServiceImpl implements ProviderService {
 
 	@Override
 	public AddressResponse getAddressResponse(Long providerId) {
+		
 		Mono<AddressResponse> response = webClient.get().uri("/api/address/by_provider/{providerId}", providerId)
 				.retrieve().bodyToMono(AddressResponse.class);
 		if (!response.equals(null)) {
@@ -54,7 +56,13 @@ public class ProviderServiceImpl implements ProviderService {
 
 	@Override
 	public AddressResponse saveAddress(AddressResponse addressResponse) {
-		Mono<AddressResponse> response = webClient.post().uri("/api/address/save")
+		/*AddressDto addressDto = new AddressDto();
+		addressDto.setStreet(addressResponse.getStreet());
+		addressDto.setHouseNumber(addressResponse.getHouseNumber());
+		addressDto.setLocality(addressResponse.getLocality());
+		addressDto.setCity(addressResponse.getCity());*/
+		
+		Mono<AddressResponse> response = webClient.post().uri("/api/address/")
 				.contentType(MediaType.APPLICATION_JSON).bodyValue(addressResponse).retrieve()
 				.bodyToMono(AddressResponse.class);
 		return response.block();

@@ -1,10 +1,6 @@
 package com.lord.providerservice.mapper;
 
-import java.util.List;
-import java.util.ListIterator;
-
 import org.springframework.stereotype.Component;
-
 import com.lord.providerservice.dto.AddressResponse;
 import com.lord.providerservice.dto.ProviderDto;
 import com.lord.providerservice.dto.ProviderResponse;
@@ -29,7 +25,7 @@ public class ProviderMapperImpl implements ProviderMapper {
 	
 
 	@Override
-	public ProviderResponse toProviderResponse(Provider provider) {
+	public ProviderResponse providerToProviderResponse(Provider provider) {
 		if(provider==null) {
 			return null;
 		}
@@ -76,11 +72,12 @@ public class ProviderMapperImpl implements ProviderMapper {
 
 
 	@Override
-	public AddressResponse toAddressResponse(ProviderDto providerDto) {
+	public AddressResponse dtoToAddressResponse(ProviderDto providerDto,Long providerId) {
 		if(providerDto==null) {
 			return null;
 		}
 		AddressResponse response = new AddressResponse();
+		response.setProviderId(providerId);
 		response.setStreet(providerDto.getStreet());
 		response.setHouseNumber(providerDto.getHouseNumber());
 		response.setLocality(providerDto.getLocality());
