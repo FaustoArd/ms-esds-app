@@ -45,8 +45,13 @@ public class ProviderMapperImpl implements ProviderMapper {
 	}
 	
 	@Override
-	public ProviderResponse toFullProviderResponse(ProviderResponse providerResponse, AddressResponse addressResponse) {
-		
+	public ProviderResponse toFullProviderResponse(Provider provider, AddressResponse addressResponse) {
+		ProviderResponse providerResponse = new ProviderResponse();
+		providerResponse.setId(provider.getId());
+		providerResponse.setSocialName(provider.getSocialName());
+		providerResponse.setFantasyName(provider.getFantasyName());
+		providerResponse.setEmail(provider.getEmail());
+		providerResponse.setPhone(provider.getPhone());
 		providerResponse.setStreet(addressResponse.getStreet());
 		providerResponse.setHouseNumber(addressResponse.getHouseNumber());
 		providerResponse.setLocality(addressResponse.getLocality());
@@ -67,6 +72,20 @@ public class ProviderMapperImpl implements ProviderMapper {
 		providerResponse.setCity(addressResponse.getCity());
 		
 		return providerResponse;
+	}
+
+
+	@Override
+	public AddressResponse toAddressResponse(ProviderDto providerDto) {
+		if(providerDto==null) {
+			return null;
+		}
+		AddressResponse response = new AddressResponse();
+		response.setStreet(providerDto.getStreet());
+		response.setHouseNumber(providerDto.getHouseNumber());
+		response.setLocality(providerDto.getLocality());
+		response.setCity(providerDto.getCity());
+		return response;
 	}
 
 	

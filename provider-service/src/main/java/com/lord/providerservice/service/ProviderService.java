@@ -9,5 +9,7 @@ public interface ProviderService {
 	public ProviderResponse createProvider(ProviderDto providerDto);
 	
 	public AddressResponse getAddressResponse(Long providerId);
+	
+	public AddressResponse saveAddress(AddressResponse addressResponse);
 
 }

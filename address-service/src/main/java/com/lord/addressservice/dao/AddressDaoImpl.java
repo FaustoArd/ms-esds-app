@@ -1,4 +1,4 @@
-package com.lord.addressservice.service_dao;
+package com.lord.addressservice.dao;
 
 import java.nio.file.ProviderNotFoundException;
 import java.util.List;
@@ -11,12 +11,12 @@ import com.lord.addressservice.model.Address;
 import com.lord.addressservice.repository.AddressRepository;
 
 @Service
-public class AddressServiceDaoImpl implements AddressServiceDao {
+public class AddressDaoImpl implements AddressDao {
 
 	@Autowired
 	private final AddressRepository addressRepository;
 	
-	public AddressServiceDaoImpl(AddressRepository addressRepository) {
+	public AddressDaoImpl(AddressRepository addressRepository) {
 		this.addressRepository = addressRepository;
 	}
 	

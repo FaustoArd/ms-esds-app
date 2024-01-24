@@ -13,9 +13,11 @@ public interface ProviderMapper {
 	
 	public ProviderResponse toProviderResponse(Provider provider);
 	
-	public ProviderResponse toFullProviderResponse(ProviderResponse providerResponse, AddressResponse addressResponse);
+	public ProviderResponse toFullProviderResponse(Provider provider, AddressResponse addressResponse);
 	
 	public ProviderResponse addressToResponse(AddressResponse addressResponse);
+	
+	public AddressResponse toAddressResponse(ProviderDto providerDto);
 	
 
 

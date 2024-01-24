@@ -1,4 +1,4 @@
-package com.lord.providerservice.service_dao;
+package com.lord.providerservice.dao;
 
 
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import com.lord.providerservice.exception.ProviderNotFoundException;
 import com.lord.providerservice.model.Provider;
 
-public interface ProviderServiceDao {
+public interface ProviderDao {
 
 	public List<Provider> findAll();
 	

@@ -1,4 +1,4 @@
-package com.lord.providerservice.service_dao;
+package com.lord.providerservice.dao;
 
 import java.util.List;
 
@@ -10,12 +10,12 @@ import com.lord.providerservice.model.Provider;
 import com.lord.providerservice.repository.ProviderRepository;
 
 @Service
-public class ProviderServiceDaoImpl implements ProviderServiceDao {
+public class ProviderDaoImpl implements ProviderDao {
 
 	@Autowired
 	private final ProviderRepository providerRepository;
 	
-	public ProviderServiceDaoImpl(ProviderRepository providerRepository) {
+	public ProviderDaoImpl(ProviderRepository providerRepository) {
 		this.providerRepository = providerRepository;
 	}
 	

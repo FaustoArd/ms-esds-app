@@ -1,11 +1,11 @@
-package com.lord.addressservice.service_dao;
+package com.lord.addressservice.dao;
 
 import java.util.List;
 
 import com.lord.addressservice.exception.AddressNotFoundException;
 import com.lord.addressservice.model.Address;
 
-public interface AddressServiceDao {
+public interface AddressDao {
 	
 	public List<Address> findAll();
 	
