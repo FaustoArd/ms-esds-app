@@ -1,5 +1,6 @@
 package com.lord.addressservice.service_dao;
 
+import java.nio.file.ProviderNotFoundException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,11 @@ public class AddressServiceDaoImpl implements AddressServiceDao {
 			throw new AddressNotFoundException("Address not found");
 		}
 		
+	}
+
+	@Override
+	public Address findByProviderId(Long id) {
+		return addressRepository.findByProviderId(id).orElseThrow(()-> new ProviderNotFoundException("Address Not found"));
 	}
 	
 	

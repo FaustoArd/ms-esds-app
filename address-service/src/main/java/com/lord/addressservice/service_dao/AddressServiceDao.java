@@ -14,5 +14,7 @@ public interface AddressServiceDao {
 	public Address save(Address address);
 	
 	public void deleteById(Long id) throws AddressNotFoundException ;
+	
+	public Address findByProviderId(Long id);
 
 }
