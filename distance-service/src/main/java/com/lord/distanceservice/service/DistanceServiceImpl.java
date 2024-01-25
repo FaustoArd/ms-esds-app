@@ -13,6 +13,7 @@ import com.lord.distanceservice.dto.TotalDistanceResponse;
 import com.lord.distanceservice.mapper.DistanceMapper;
 import com.lord.distanceservice.model.DistanceMatrixResponse;
 import com.lord.distanceservice.model.GeocodingResult;
+import com.lord.distanceservice.model.PlacesTextSearchResponse;
 
 import reactor.core.publisher.Mono;
 
@@ -68,6 +69,14 @@ public class DistanceServiceImpl implements DistanceService {
 				.accept(MediaType.APPLICATION_JSON).retrieve().bodyToMono(GeocodingResult.class);
 		return results.block();
 
+	}
+
+	@Override
+	public PlacesTextSearchResponse matchAddress(String address) {
+		Mono<PlacesTextSearchResponse> results = webClient.get().uri("/maps/api/place/textsearch/json",
+				uriBuilder -> uriBuilder.queryParam("query", address).queryParam("key", keyManager.getKey()).build())
+				.accept(MediaType.APPLICATION_JSON).retrieve().bodyToMono(PlacesTextSearchResponse.class);
+		return results.block();
 	}
 
 }
