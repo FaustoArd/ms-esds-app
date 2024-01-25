@@ -18,26 +18,23 @@ import reactor.core.publisher.Mono;
 
 @Service
 public class DistanceServiceImpl implements DistanceService {
-	
+
 	@Autowired
 	private final DistanceDao distanceDao;
 
 	@Autowired
 	private final DistanceMapper distanceMapper;
-	
-	
+
 	private final WebClient webClient;
-	
-	private final  KeyManager keyManager;
-	
-	
-	
-	public DistanceServiceImpl(DistanceDao distanceDao,DistanceMapper distanceMapper,WebClient.Builder webClientBuilder,KeyManager keyManager) {
+
+	private final KeyManager keyManager;
+
+	public DistanceServiceImpl(DistanceDao distanceDao, DistanceMapper distanceMapper,
+			WebClient.Builder webClientBuilder, KeyManager keyManager) {
 		this.distanceDao = distanceDao;
-		this.distanceMapper= distanceMapper;
+		this.distanceMapper = distanceMapper;
 		this.webClient = webClientBuilder.baseUrl("https://maps.googleapis.com").build();
 		this.keyManager = keyManager;
-	
 	}
 
 	@Override
@@ -50,33 +47,27 @@ public class DistanceServiceImpl implements DistanceService {
 	public DistanceMatrixResponse getDistanceFromMaps(DistanceDto distanceDto) {
 
 		ArrayList<String> destinations = new ArrayList<>();
-		destinations.add(distanceDto.getDestination()) ;
+		destinations.add(distanceDto.getDestination());
 		ArrayList<String> origins = new ArrayList<>();
-		origins.add(distanceDto.getOrigin()) ;
-	
-		String API_KEY = keyManager.getKey();
-		Mono<DistanceMatrixResponse> matrixResponse =  webClient.get().uri("/maps/api/distancematrix/json", uriBuilder ->
-		uriBuilder
-		.queryParam("destinations",destinations)
-		.queryParam("origins", origins)
-		.queryParam("key", API_KEY)
-		.build()).accept(MediaType.APPLICATION_JSON).retrieve()
-		.bodyToMono(DistanceMatrixResponse.class);
-		
+		origins.add(distanceDto.getOrigin());
+
+		Mono<DistanceMatrixResponse> matrixResponse = webClient.get()
+				.uri("/maps/api/distancematrix/json",
+						uriBuilder -> uriBuilder.queryParam("destinations", destinations).queryParam("origins", origins)
+								.queryParam("key", keyManager.getKey()).build())
+				.accept(MediaType.APPLICATION_JSON).retrieve().bodyToMono(DistanceMatrixResponse.class);
+
 		return matrixResponse.block();
 	}
 
 	@Override
 	public GeocodingResult getAddressCoordinates(String address) {
-		
-		Mono<GeocodingResult> results = webClient.get().uri("/maps/api/geocode/json",uriBuilder -> uriBuilder
-				.queryParam("address", address)
-				.queryParam("key", keyManager.getKey())
-				.build()).accept(MediaType.APPLICATION_JSON).retrieve()
-				.bodyToMono(GeocodingResult.class);
+
+		Mono<GeocodingResult> results = webClient.get().uri("/maps/api/geocode/json",
+				uriBuilder -> uriBuilder.queryParam("address", address).queryParam("key", keyManager.getKey()).build())
+				.accept(MediaType.APPLICATION_JSON).retrieve().bodyToMono(GeocodingResult.class);
 		return results.block();
-				
+
 	}
-	
-	
+
 }
