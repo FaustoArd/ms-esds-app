@@ -1,15 +1,19 @@
 package com.lord.distanceservice.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lord.distanceservice.dto.DistanceDto;
 import com.lord.distanceservice.model.DistanceMatrixResponse;
+import com.lord.distanceservice.model.GeocodingResult;
 import com.lord.distanceservice.service.DistanceService;
 
 @RestController
@@ -27,6 +31,12 @@ public class DistanceController {
 	ResponseEntity<DistanceMatrixResponse> getDistanceFromMaps(@RequestBody DistanceDto distanceDto){
 		DistanceMatrixResponse response = distanceService.getDistanceFromMaps(distanceDto);
 		return new ResponseEntity<DistanceMatrixResponse>(response,HttpStatus.OK);
+	}
+	
+	@GetMapping("/coordinates")
+	ResponseEntity<GeocodingResult> getAddressCoordinates(@RequestParam("address")String address){
+		GeocodingResult results = distanceService.getAddressCoordinates(address);
+		return new ResponseEntity<GeocodingResult>(results,HttpStatus.OK);
 	}
 	
 	
