@@ -19,9 +19,7 @@
   	<module>price-service</module>
   	<module>address-service</module>
   	<module>labor-service</module>
-  	<module>jobrole-service</module>
   	<module>employee-service</module>
-  	<module>deduction-service</module>
   	<module>discovery-server</module>
   	<module>api-gateway</module>
   	<module>distance-service</module>
