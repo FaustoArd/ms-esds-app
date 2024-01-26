@@ -1,6 +1,8 @@
 package com.lord.distanceservice.service;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.MediaType;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import com.lord.distanceservice.configuration.KeyManager;
 import com.lord.distanceservice.dao.DistanceDao;
+import com.lord.distanceservice.dto.AddressCompleteResultResponse;
 import com.lord.distanceservice.dto.DistanceDto;
 import com.lord.distanceservice.dto.TotalDistanceResponse;
 import com.lord.distanceservice.mapper.DistanceMapper;
@@ -72,11 +75,22 @@ public class DistanceServiceImpl implements DistanceService {
 	}
 
 	@Override
-	public PlacesTextSearchResponse matchAddress(String address) {
+	public List<AddressCompleteResultResponse> matchAddress(String address) {
 		Mono<PlacesTextSearchResponse> results = webClient.get().uri("/maps/api/place/textsearch/json",
 				uriBuilder -> uriBuilder.queryParam("query", address).queryParam("key", keyManager.getKey()).build())
 				.accept(MediaType.APPLICATION_JSON).retrieve().bodyToMono(PlacesTextSearchResponse.class);
-		return results.block();
+		return getFullAddressesFromTextSearchResponse(results.block());
+	}
+
+	@Override
+	public List<AddressCompleteResultResponse> getFullAddressesFromTextSearchResponse(PlacesTextSearchResponse response) {
+		List<AddressCompleteResultResponse> results = response.getResults().stream().map(res -> {
+			AddressCompleteResultResponse address = new AddressCompleteResultResponse();
+			address.setAddressResults(res.getFormatted_address());
+			return address;
+		}).toList();
+		
+		return results;
 	}
 
 }

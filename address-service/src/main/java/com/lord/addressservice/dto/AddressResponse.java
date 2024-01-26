@@ -3,10 +3,16 @@ package com.lord.addressservice.dto;
 public class AddressResponse {
 	
 	private Long id;
+	
+	private Long customerId;
+	
+	private Long providerId;
 
 	private String street;
 
 	private String houseNumber;
+	
+	private String gMapsFullname;
 
 	private String locality;
 
@@ -22,6 +28,27 @@ public class AddressResponse {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
+
+	public Long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
+	}
+
+	public Long getProviderId() {
+		return providerId;
+	}
+
+	public void setProviderId(Long providerId) {
+		this.providerId = providerId;
+	}
+
+	public Long getId() {
+		return id;
+	}
 
 	public void setStreet(String street) {
 		this.street = street;
@@ -33,6 +60,12 @@ public class AddressResponse {
 
 	public void setHouseNumber(String houseNumber) {
 		this.houseNumber = houseNumber;
+	}
+	public String getGMapsFullname() {
+		return gMapsFullname;
+	}
+	public void setGmapsFullname(String gMapsFullname) {
+		this.gMapsFullname = gMapsFullname;
 	}
 
 	public String getLocality() {

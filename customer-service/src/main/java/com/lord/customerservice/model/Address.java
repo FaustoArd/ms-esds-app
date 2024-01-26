@@ -1,8 +1,10 @@
-package com.lord.addressservice.dto;
+package com.lord.customerservice.model;
 
-public class AddressDto {
-
+public class Address {
+	
 	private Long id;
+	
+	private Long customerId;
 
 	private String street;
 
@@ -14,16 +16,19 @@ public class AddressDto {
 
 	private String city;
 
-	private Long customerId;
-
-	private Long providerId;
-
 	public Long getId() {
 		return id;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	public Long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
 	}
 
 	public String getStreet() {
@@ -41,11 +46,12 @@ public class AddressDto {
 	public void setHouseNumber(String houseNumber) {
 		this.houseNumber = houseNumber;
 	}
-	
-	public String getGMapsFullname() {
+
+	public String getgMapsFullname() {
 		return gMapsFullname;
 	}
-	public void setGmapsFullname(String gMapsFullname) {
+
+	public void setgMapsFullname(String gMapsFullname) {
 		this.gMapsFullname = gMapsFullname;
 	}
 
@@ -64,21 +70,7 @@ public class AddressDto {
 	public void setCity(String city) {
 		this.city = city;
 	}
-
-	public Long getCustomerId() {
-		return customerId;
-	}
-
-	public void setCustomerId(Long customerId) {
-		this.customerId = customerId;
-	}
-
-	public Long getProviderId() {
-		return providerId;
-	}
-
-	public void setProviderId(Long providerId) {
-		this.providerId = providerId;
-	}
+	
+	
 
 }

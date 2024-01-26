@@ -1,34 +1,24 @@
-package com.lord.customerservice.model;
+package com.lord.customerservice.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.lord.customerservice.model.Address;
 
-@Entity
-@Table(name="customers")
-public class Customer {
-	
-	@Id
-	@GeneratedValue(strategy =  GenerationType.AUTO)
+public class CustomerResponse {
+
 	private Long id;
-	
+
 	private String name;
-	
+
 	private String socialName;
-	
+
 	private String type;
-	
+
 	private String cuit;
-	
+
 	private String email;
-	
+
 	private String phone;
 	
-	public Customer() {
-		super();
-	}
+	private Address address;
 
 	public Long getId() {
 		return id;
@@ -45,10 +35,11 @@ public class Customer {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public String getSocialName() {
 		return socialName;
 	}
+
 	public void setSocialName(String socialName) {
 		this.socialName = socialName;
 	}
@@ -85,6 +76,11 @@ public class Customer {
 		this.phone = phone;
 	}
 	
-	
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 
 }

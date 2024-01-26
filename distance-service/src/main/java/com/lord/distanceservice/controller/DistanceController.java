@@ -1,6 +1,7 @@
 package com.lord.distanceservice.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.lord.distanceservice.dto.AddressCompleteResultResponse;
 import com.lord.distanceservice.dto.DistanceDto;
 import com.lord.distanceservice.model.DistanceMatrixResponse;
 import com.lord.distanceservice.model.GeocodingResult;
@@ -46,9 +48,9 @@ public class DistanceController {
 	}
 	
 	@GetMapping("/address_search")
-	ResponseEntity<PlacesTextSearchResponse> searchAddress(@RequestParam("query")String query){
-		PlacesTextSearchResponse results = distanceService.matchAddress(query);
-		return new ResponseEntity<PlacesTextSearchResponse>(results,HttpStatus.OK);
+	ResponseEntity<List<AddressCompleteResultResponse>> searchAddress(@RequestParam("query")String query){
+		List<AddressCompleteResultResponse> results = distanceService.matchAddress(query);
+		return new ResponseEntity<List<AddressCompleteResultResponse>>(results,HttpStatus.OK);
 	}
 	
 	

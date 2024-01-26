@@ -18,6 +18,8 @@ public class Address {
 	
 	private String houseNumber;
 	
+	private String gMapsFullname;
+	
 	private String locality;
 	
 	private String city;
@@ -53,6 +55,13 @@ public class Address {
 
 	public void setHouseNumber(String houseNumber) {
 		this.houseNumber = houseNumber;
+	}
+	
+	public String getGMapsFullname() {
+		return gMapsFullname;
+	}
+	public void setGmapsFullname(String gMapsFullname) {
+		this.gMapsFullname = gMapsFullname;
 	}
 
 	public String getLocality() {
