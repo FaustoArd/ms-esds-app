@@ -52,6 +52,7 @@ public class DistanceServiceImpl implements DistanceService {
 
 		ArrayList<String> destinations = new ArrayList<>();
 		destinations.add(distanceDto.getDestination());
+		
 		ArrayList<String> origins = new ArrayList<>();
 		origins.add(distanceDto.getOrigin());
 
