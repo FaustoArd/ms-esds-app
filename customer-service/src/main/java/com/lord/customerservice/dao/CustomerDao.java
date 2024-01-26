@@ -1,11 +1,11 @@
-package com.lord.customerservice.service_dao;
+package com.lord.customerservice.dao;
 
 import java.util.List;
 
 import com.lord.customerservice.exception.CustomerNotFoundException;
 import com.lord.customerservice.model.Customer;
 
-public interface CustomerServiceDao {
+public interface CustomerDao {
 	
 	public List<Customer> findAll();
 	

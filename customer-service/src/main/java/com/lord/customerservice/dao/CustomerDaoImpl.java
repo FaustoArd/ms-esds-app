@@ -1,4 +1,4 @@
-package com.lord.customerservice.service_dao;
+package com.lord.customerservice.dao;
 
 import java.util.List;
 
@@ -10,12 +10,12 @@ import com.lord.customerservice.model.Customer;
 import com.lord.customerservice.repository.CustomerRepository;
 
 @Service
-public class CustomerServiceDaoImpl implements CustomerServiceDao {
+public class CustomerDaoImpl implements CustomerDao {
 	
 	@Autowired
 	private final CustomerRepository customerRepository;
 	
-	public CustomerServiceDaoImpl(CustomerRepository customerRepository) {
+	public CustomerDaoImpl(CustomerRepository customerRepository) {
 		this.customerRepository = customerRepository;
 	}
 
