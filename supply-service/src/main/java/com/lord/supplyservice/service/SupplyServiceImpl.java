@@ -34,7 +34,12 @@ public class SupplyServiceImpl implements SupplyService{
 
 	@Override
 	public List<SupplyResponse> findByProviderId(Long providerId) {
-		return (List<SupplyResponse>)supplyMapper.dtoListToResponse(supplyDao.findByProviderId(providerId));
+		return (List<SupplyResponse>)supplyMapper.dtoListToResponses(supplyDao.findByProviderId(providerId));
+	}
+
+	@Override
+	public List<SupplyResponse> findAllSupplies() {
+		return supplyMapper.dtoListToResponses(supplyDao.findAll());
 	}
 
 }

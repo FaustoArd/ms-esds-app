@@ -9,6 +9,9 @@ public interface SupplyService {
 	
 	public String createSupply(SupplyDto supplyDto);
 	
+	public List<SupplyResponse> findAllSupplies();
+	
 	public List<SupplyResponse> findByProviderId(Long providerId);
+	
 
 }

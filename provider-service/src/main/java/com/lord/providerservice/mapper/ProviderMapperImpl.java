@@ -1,5 +1,7 @@
 package com.lord.providerservice.mapper;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 import com.lord.providerservice.dto.AddressResponse;
 import com.lord.providerservice.dto.ProviderDto;
@@ -91,6 +93,16 @@ public class ProviderMapperImpl implements ProviderMapper {
 		response.setLocality(providerDto.getAddress().getLocality());
 		response.setCity(providerDto.getAddress().getCity());
 		return response;
+	}
+
+
+	@Override
+	public List<ProviderResponse> providersToProviderResponses(List<Provider> providers) {
+		if(providers== null) {
+			return null;
+		}
+		List<ProviderResponse> responses = providers.stream().map(this::providerToProviderResponse).toList();
+		return responses;
 	}
 
 	

@@ -47,7 +47,7 @@ public class SupplyMapperImpl implements SupplyMapper {
 	}
 
 	@Override
-	public List<SupplyResponse> dtoListToResponse(List<Supply> supplies) {
+	public List<SupplyResponse> dtoListToResponses(List<Supply> supplies) {
 		if (supplies == null) {
 			return null;
 		}

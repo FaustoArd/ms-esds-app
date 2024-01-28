@@ -1,8 +1,11 @@
 package com.lord.providerservice.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,5 +30,11 @@ public class ProviderController {
 	ResponseEntity<ProviderResponse> createProvider(@RequestBody ProviderDto providerDto){
 		ProviderResponse providerResponse = providerService.createProvider(providerDto);
 		return new ResponseEntity<ProviderResponse>(providerResponse,HttpStatus.CREATED);
+	}
+	
+	@GetMapping("/all")
+	ResponseEntity<List<ProviderResponse>> findAllProviders(){
+		List<ProviderResponse> responses = providerService.findAllProviders();
+		return ResponseEntity.ok(responses);
 	}
 }

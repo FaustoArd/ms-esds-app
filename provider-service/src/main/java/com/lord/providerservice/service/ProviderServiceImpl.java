@@ -1,5 +1,7 @@
 package com.lord.providerservice.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
@@ -62,6 +64,12 @@ public class ProviderServiceImpl implements ProviderService {
 				.contentType(MediaType.APPLICATION_JSON).bodyValue(addressResponse).retrieve()
 				.bodyToMono(AddressResponse.class);
 		return response.block();
+	}
+
+	@Override
+	public List<ProviderResponse> findAllProviders() {
+		List<Provider> providers = providerDao.findAll();
+		return providerMapper.providersToProviderResponses(providers);
 	}
 
 }

@@ -12,5 +12,5 @@ public interface SupplyMapper {
 	
 	public SupplyResponse supplyToResponse(Supply supply);
 	
-	public List<SupplyResponse> dtoListToResponse(List<Supply> supplies);
+	public List<SupplyResponse> dtoListToResponses(List<Supply> supplies);
 }

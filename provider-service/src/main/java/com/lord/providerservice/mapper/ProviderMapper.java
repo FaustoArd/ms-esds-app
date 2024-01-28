@@ -19,6 +19,7 @@ public interface ProviderMapper {
 	
 	public AddressResponse dtoToAddressResponse(ProviderDto providerDto,Long providerId);
 	
+	public List<ProviderResponse> providersToProviderResponses(List<Provider >providers);
 
 
 }
