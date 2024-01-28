@@ -1,22 +1,14 @@
-package com.lord.employeeservice.model;
+package com.lord.employeeservice.dto;
 
 import java.math.BigDecimal;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+public class DeductionResponse {
 
-@Entity
-@Table(name="deductions")
-public class Deduction {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+private Long id;
 	
+	private String jobRole;
+
 	private BigDecimal retirement;
 	
 	private BigDecimal inss;
@@ -33,12 +25,7 @@ public class Deduction {
 	
 	private BigDecimal loanDiscount;
 	
-	@OneToOne(mappedBy = "deduction")
-	private JobRole jobRole;
 	
-	public Deduction() {
-		super();
-	}
 
 	public Long getId() {
 		return id;
@@ -112,6 +99,4 @@ public class Deduction {
 		this.loanDiscount = loanDiscount;
 	}
 	
-	
-
 }

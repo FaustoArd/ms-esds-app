@@ -24,7 +24,9 @@ public class JobRole {
 	
 	private BigDecimal payHour;
     
-	private BigDecimal payExtraHour;
+	private BigDecimal payExtraHour50;
+	
+	private BigDecimal payExtraHour100;
 	
 	private BigDecimal prize;
 	
@@ -58,12 +60,21 @@ public class JobRole {
 		this.payHour = payHour;
 	}
 
-	public BigDecimal getPayExtraHour() {
-		return payExtraHour;
+	public BigDecimal getPayExtraHour50() {
+		return payExtraHour50;
 	}
 
-	public void setPayExtraHour(BigDecimal payExtraHour) {
-		this.payExtraHour = payExtraHour;
+	public void setPayExtraHour50(BigDecimal payExtraHour) {
+		this.payExtraHour50 = payExtraHour;
+	}
+
+	
+	public BigDecimal getPayExtraHour100() {
+		return payExtraHour100;
+	}
+
+	public void setPayExtraHour100(BigDecimal payExtraHour100) {
+		this.payExtraHour100 = payExtraHour100;
 	}
 
 	public BigDecimal getPrize() {

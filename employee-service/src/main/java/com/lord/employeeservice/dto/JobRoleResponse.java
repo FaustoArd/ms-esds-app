@@ -2,8 +2,8 @@ package com.lord.employeeservice.dto;
 
 import java.math.BigDecimal;
 
-public class JobRoleDto {
-	
+public class JobRoleResponse {
+
 	private Long id;
 	
 	private String role;
@@ -50,6 +50,7 @@ public class JobRoleDto {
 		this.payExtraHour50 = payExtraHour50;
 	}
 
+	
 	public BigDecimal getPayExtraHour100() {
 		return payExtraHour100;
 	}
