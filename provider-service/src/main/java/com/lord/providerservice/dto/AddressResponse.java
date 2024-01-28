@@ -6,7 +6,7 @@ public class AddressResponse {
 
 	private String houseNumber;
 	
-	private String gMapsFullAddres;
+	private String gMapsFullname;
 
 	private String locality;
 
@@ -33,12 +33,12 @@ public class AddressResponse {
 	}
 	
 	
-	public String getgMapsFullAddres() {
-		return gMapsFullAddres;
+	public String getgMapsFullname() {
+		return gMapsFullname;
 	}
 
-	public void setgMapsFullAddres(String gMapsFullAddres) {
-		this.gMapsFullAddres = gMapsFullAddres;
+	public void setgMapsFullname(String gMapsFullname) {
+		this.gMapsFullname = gMapsFullname;
 	}
 
 	public String getLocality() {

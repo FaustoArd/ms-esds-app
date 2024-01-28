@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.lord.providerservice.dao.ProviderDao;
-import com.lord.providerservice.dto.AddressDto;
+import com.lord.providerservice.dto.Address;
 import com.lord.providerservice.dto.AddressResponse;
 import com.lord.providerservice.dto.ProviderDto;
 import com.lord.providerservice.dto.ProviderResponse;

@@ -16,15 +16,8 @@ public class ProviderDto {
 	
 	private String phone;
 	
-	private AddressDto addressDto;
+	private Address address;
 	
-	
-	
-	
-	
-	
-	
-
 	public Long getId() {
 		return id;
 	}
@@ -83,12 +76,12 @@ public class ProviderDto {
 		this.phone = phone;
 	}
 
-	public AddressDto getAddressDto() {
-		return addressDto;
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setAddressDto(AddressDto addressDto) {
-		this.addressDto = addressDto;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 

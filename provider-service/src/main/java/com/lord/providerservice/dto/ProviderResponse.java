@@ -20,7 +20,7 @@ public class ProviderResponse {
 	
 	private String houseNumber;
 	
-	private String gMapsFullAddress;
+	private String gMapsFullname;
 	
 	private String locality;
 	
@@ -95,11 +95,11 @@ public class ProviderResponse {
 		this.houseNumber = houseNumber;
 	}
 	
-	public String getgMapsFullAddress() {
-		return gMapsFullAddress;
+	public String getgMapsFullname() {
+		return gMapsFullname;
 	}
-	public void setgMapsFullAddress(String gMapsFullAddress) {
-		this.gMapsFullAddress = gMapsFullAddress;
+	public void setgMapsFullname(String gMapsFullname) {
+		this.gMapsFullname = gMapsFullname;
 	}
 	public String getLocality() {
 		return locality;

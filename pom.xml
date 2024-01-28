@@ -16,7 +16,6 @@
   	<module>customer-service</module>
   	<module>provider-service</module>
   	<module>supply-service</module>
-  	<module>price-service</module>
   	<module>address-service</module>
   	<module>labor-service</module>
   	<module>employee-service</module>
