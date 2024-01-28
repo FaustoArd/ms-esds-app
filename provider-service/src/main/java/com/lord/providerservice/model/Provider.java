@@ -18,6 +18,10 @@ public class Provider {
 	
 	private String fantasyName;
 	
+	private String type;
+	
+	private String cuit;
+	
 	private String email;
 	
 	private String phone;
@@ -45,9 +49,27 @@ public class Provider {
 	public String getFantasyName() {
 		return fantasyName;
 	}
+	
+	
 
 	public void setFantasyName(String fantasyName) {
 		this.fantasyName = fantasyName;
+	}
+	
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	
+	public String getCuit() {
+		return cuit;
+	}
+
+	public void setCuit(String cuit) {
+		this.cuit = cuit;
 	}
 
 	public String getEmail() {

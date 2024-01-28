@@ -14,7 +14,7 @@ import com.lord.customerservice.dto.CustomerResponse;
 import com.lord.customerservice.service.CustomerService;
 
 @RestController
-@RequestMapping("/api/customers")
+@RequestMapping("/api/customer")
 public class CustomerController {
 	
 	@Autowired

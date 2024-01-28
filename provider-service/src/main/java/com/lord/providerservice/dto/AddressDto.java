@@ -5,6 +5,8 @@ public class AddressDto {
 	private String street;
 
 	private String houseNumber;
+	
+	private String gMapsFullAddres;
 
 	private String locality;
 
@@ -32,6 +34,13 @@ public class AddressDto {
 
 	public String getLocality() {
 		return locality;
+	}
+	
+	public String getGMapsFullAddres() {
+		return gMapsFullAddres;
+	}
+	public void setGmapsFullAddress(String gMapsFullAddres) {
+		this.gMapsFullAddres = gMapsFullAddres;
 	}
 
 	public void setLocality(String locality) {

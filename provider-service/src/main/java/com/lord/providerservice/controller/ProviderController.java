@@ -23,8 +23,8 @@ public class ProviderController {
 		this.providerService = providerService;
 	}
 	
-	@PostMapping("/")
-	ResponseEntity<ProviderResponse> saveProvider(@RequestBody ProviderDto providerDto){
+	@PostMapping("/new")
+	ResponseEntity<ProviderResponse> createProvider(@RequestBody ProviderDto providerDto){
 		ProviderResponse providerResponse = providerService.createProvider(providerDto);
 		return new ResponseEntity<ProviderResponse>(providerResponse,HttpStatus.CREATED);
 	}

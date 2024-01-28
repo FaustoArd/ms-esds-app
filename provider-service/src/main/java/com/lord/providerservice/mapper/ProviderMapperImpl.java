@@ -18,6 +18,8 @@ public class ProviderMapperImpl implements ProviderMapper {
 		provider.setId(providerDto.getId());
 		provider.setSocialName(providerDto.getSocialName());
 		provider.setFantasyName(providerDto.getFantasyName());
+		provider.setType(providerDto.getType());
+		provider.setCuit(providerDto.getCuit());
 		provider.setPhone(providerDto.getPhone());
 		provider.setEmail(providerDto.getEmail());
 		return provider;
@@ -34,6 +36,7 @@ public class ProviderMapperImpl implements ProviderMapper {
 		providerResponse.setId(provider.getId());
 		providerResponse.setSocialName(provider.getSocialName());
 		providerResponse.setFantasyName(provider.getFantasyName());
+		providerResponse.setCuit(provider.getCuit());
 		providerResponse.setPhone(provider.getPhone());
 		providerResponse.setEmail(provider.getEmail());
 		
@@ -46,10 +49,13 @@ public class ProviderMapperImpl implements ProviderMapper {
 		providerResponse.setId(provider.getId());
 		providerResponse.setSocialName(provider.getSocialName());
 		providerResponse.setFantasyName(provider.getFantasyName());
+		providerResponse.setType(provider.getType());
+		providerResponse.setCuit(provider.getCuit());
 		providerResponse.setEmail(provider.getEmail());
 		providerResponse.setPhone(provider.getPhone());
 		providerResponse.setStreet(addressResponse.getStreet());
 		providerResponse.setHouseNumber(addressResponse.getHouseNumber());
+		providerResponse.setGMapsFullAddress(addressResponse.getGMapsFullAddres());
 		providerResponse.setLocality(addressResponse.getLocality());
 		providerResponse.setCity(addressResponse.getCity());
 		
@@ -64,6 +70,7 @@ public class ProviderMapperImpl implements ProviderMapper {
 		ProviderResponse providerResponse = new ProviderResponse();
 		providerResponse.setStreet(addressResponse.getStreet());
 		providerResponse.setHouseNumber(addressResponse.getHouseNumber());
+		providerResponse.setGMapsFullAddress(addressResponse.getGMapsFullAddres());
 		providerResponse.setLocality(addressResponse.getLocality());
 		providerResponse.setCity(addressResponse.getCity());
 		
@@ -80,6 +87,7 @@ public class ProviderMapperImpl implements ProviderMapper {
 		response.setProviderId(providerId);
 		response.setStreet(providerDto.getStreet());
 		response.setHouseNumber(providerDto.getHouseNumber());
+		response.setGMapsFullAddres(providerDto.getGMapsFullAddress());
 		response.setLocality(providerDto.getLocality());
 		response.setCity(providerDto.getCity());
 		return response;

@@ -8,6 +8,10 @@ public class ProviderDto {
 	
 	private String fantasyName;
 	
+	private String type;
+	
+	private String cuit;
+	
 	private String email;
 	
 	private String phone;
@@ -15,6 +19,8 @@ public class ProviderDto {
 	private String street;
 	
 	private String houseNumber;
+	
+	private String gMapsFullAddress;
 	
 	private String locality;
 	
@@ -47,6 +53,24 @@ public class ProviderDto {
 		this.fantasyName = fantasyName;
 	}
 
+	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	
+	public String getCuit() {
+		return cuit;
+	}
+
+	public void setCuit(String cuit) {
+		this.cuit = cuit;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -73,6 +97,13 @@ public class ProviderDto {
 
 	public String getHouseNumber() {
 		return houseNumber;
+	}
+	
+	public String getGMapsFullAddress() {
+		return gMapsFullAddress;
+	}
+	public void setGMapsFullAddress(String gMapsFullAddres) {
+		this.gMapsFullAddress = gMapsFullAddres;
 	}
 
 	public void setHouseNumber(String houseNumber) {

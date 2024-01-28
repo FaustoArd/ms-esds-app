@@ -57,10 +57,13 @@ public class Address {
 		this.houseNumber = houseNumber;
 	}
 	
-	public String getGMapsFullname() {
+	
+
+	public String getgMapsFullname() {
 		return gMapsFullname;
 	}
-	public void setGmapsFullname(String gMapsFullname) {
+
+	public void setgMapsFullname(String gMapsFullname) {
 		this.gMapsFullname = gMapsFullname;
 	}
 

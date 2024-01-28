@@ -19,6 +19,7 @@ public class AddressMapperImpl implements AddressMapper {
 		Address address = new Address();
 		address.setStreet(addressDto.getStreet());
 		address.setHouseNumber(addressDto.getHouseNumber());
+		address.setgMapsFullname(addressDto.getgMapsFullname());
 		address.setLocality(addressDto.getLocality());
 		address.setCity(addressDto.getCity());
 		address.setCustomerId(addressDto.getCustomerId());
@@ -36,6 +37,7 @@ public class AddressMapperImpl implements AddressMapper {
 		addressResponse.setId(addressDto.getId());
 		addressResponse.setStreet(addressDto.getStreet());
 		addressResponse.setHouseNumber(addressDto.getHouseNumber());
+		addressResponse.setgMapsFullname(addressDto.getgMapsFullname());
 		addressResponse.setLocality(addressDto.getLocality());
 		addressResponse.setCity(addressDto.getCity());
 		return addressResponse;
@@ -49,6 +51,7 @@ public class AddressMapperImpl implements AddressMapper {
 		AddressResponse addressResponse = new AddressResponse();
 		addressResponse.setStreet(address.getStreet());
 		addressResponse.setHouseNumber(address.getHouseNumber());
+		addressResponse.setgMapsFullname(address.getgMapsFullname());
 		addressResponse.setLocality(address.getLocality());
 		addressResponse.setCity(address.getCity());
 		
