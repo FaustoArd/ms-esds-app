@@ -56,11 +56,7 @@ public class ProviderServiceImpl implements ProviderService {
 
 	@Override
 	public AddressResponse saveAddress(AddressResponse addressResponse) {
-		/*AddressDto addressDto = new AddressDto();
-		addressDto.setStreet(addressResponse.getStreet());
-		addressDto.setHouseNumber(addressResponse.getHouseNumber());
-		addressDto.setLocality(addressResponse.getLocality());
-		addressDto.setCity(addressResponse.getCity());*/
+		
 		
 		Mono<AddressResponse> response = webClient.post().uri("/api/address/")
 				.contentType(MediaType.APPLICATION_JSON).bodyValue(addressResponse).retrieve()

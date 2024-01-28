@@ -32,13 +32,15 @@ public class AddressResponse {
 		this.houseNumber = houseNumber;
 	}
 	
-	public String getGMapsFullAddres() {
+	
+	public String getgMapsFullAddres() {
 		return gMapsFullAddres;
 	}
 
-	public void setGMapsFullAddres(String gMapsFullAddres) {
+	public void setgMapsFullAddres(String gMapsFullAddres) {
 		this.gMapsFullAddres = gMapsFullAddres;
 	}
+
 	public String getLocality() {
 		return locality;
 	}

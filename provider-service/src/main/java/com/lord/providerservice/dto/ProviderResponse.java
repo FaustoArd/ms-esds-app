@@ -94,13 +94,13 @@ public class ProviderResponse {
 	public void setHouseNumber(String houseNumber) {
 		this.houseNumber = houseNumber;
 	}
-	public String getGMapsFullAddress() {
+	
+	public String getgMapsFullAddress() {
 		return gMapsFullAddress;
 	}
-	public void setGMapsFullAddress(String gMapsFullAddress) {
+	public void setgMapsFullAddress(String gMapsFullAddress) {
 		this.gMapsFullAddress = gMapsFullAddress;
 	}
-
 	public String getLocality() {
 		return locality;
 	}

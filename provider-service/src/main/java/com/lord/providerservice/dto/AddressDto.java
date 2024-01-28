@@ -14,7 +14,7 @@ public class AddressDto {
 	
 	private Long providerId;
 	
-	private Long customerId;
+	
 
 	public String getStreet() {
 		return street;
@@ -36,10 +36,13 @@ public class AddressDto {
 		return locality;
 	}
 	
-	public String getGMapsFullAddres() {
+	
+
+	public String getgMapsFullAddres() {
 		return gMapsFullAddres;
 	}
-	public void setGmapsFullAddress(String gMapsFullAddres) {
+
+	public void setgMapsFullAddres(String gMapsFullAddres) {
 		this.gMapsFullAddres = gMapsFullAddres;
 	}
 
@@ -62,13 +65,4 @@ public class AddressDto {
 	public void setProviderId(Long providerId) {
 		this.providerId = providerId;
 	}
-
-	public Long getCustomerId() {
-		return customerId;
 	}
-
-	public void setCustomerId(Long customerId) {
-		this.customerId = customerId;
-	}
-	
-}
