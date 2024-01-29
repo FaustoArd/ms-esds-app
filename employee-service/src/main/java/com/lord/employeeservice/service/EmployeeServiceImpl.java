@@ -45,7 +45,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public String createEmployee(EmployeeDto employeeDto) {
 		log.info("Create employee");
 		Employee employee = EmployeeMapper.INSTANCE.dtoToEmployee(employeeDto);
+		JobRole jobRole = jobRoleDao.findyId(employeeDto.getJobRoleId());
+		employee.setJobRole(jobRole);
 		Employee savedEmployee = employeeDao.save(employee);
+		log.info("Employee saved sucessfully: " + savedEmployee.getName());
 		return savedEmployee.getName()  + " " + savedEmployee.getLastname();
 	}
 	
@@ -54,6 +57,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		log.info("Create Job Role");
 		JobRole jobRole = JobRoleMapper.INSTANCE.dtoToJobRole(jobRoleDto);
 		JobRole savedJobRole = jobRoleDao.save(jobRole);
+		log.info("Employee saved sucessfully: " + savedJobRole.getRole());
 		return savedJobRole.getRole();
 	}
 
@@ -61,7 +65,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public String createDeduction(DeductionDto deductionDto) {
 		log.info("Create Deduction");
 		Deduction deduction = DeductionMapper.INSTANCE.dtoToDeduction(deductionDto);
+		JobRole jobRole = jobRoleDao.findyId(deductionDto.getJobRoleId());
+		deduction.setJobRole(jobRole);
 		Deduction savedDeduction = deductionDao.save(deduction);
+		log.info("Deduction saved sucessfully");
 		return savedDeduction.getJobRole().getRole();
 	}
 
