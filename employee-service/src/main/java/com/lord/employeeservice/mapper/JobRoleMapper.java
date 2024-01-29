@@ -1,5 +1,7 @@
 package com.lord.employeeservice.mapper;
 
+import java.util.List;
+
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
@@ -17,4 +19,6 @@ public interface JobRoleMapper {
 	public JobRole dtoToJobRole(JobRoleDto jobRoleDto);
 	
 	public JobRoleResponse jobRoleToResponse(JobRole jobRole);
+	
+	public List<JobRoleResponse> jobRolesToResponses(List<JobRole> jobRoles);
 }

@@ -6,6 +6,8 @@ public class DeductionDto {
 
 	private Long id;
 	
+	private Long jobRoleId;
+	
 	private BigDecimal retirement;
 	
 	private BigDecimal inss;
@@ -21,6 +23,8 @@ public class DeductionDto {
 	private BigDecimal bonificationDiscount;
 	
 	private BigDecimal loanDiscount;
+	
+	
 
 	public Long getId() {
 		return id;
@@ -28,6 +32,16 @@ public class DeductionDto {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	
+	
+	public Long getJobRoleId() {
+		return jobRoleId;
+	}
+
+	public void setJobRoleId(Long jobRoleId) {
+		this.jobRoleId = jobRoleId;
 	}
 
 	public BigDecimal getRetirement() {

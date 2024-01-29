@@ -3,11 +3,13 @@ package com.lord.employeeservice.mapper;
 import com.lord.employeeservice.dto.JobRoleDto;
 import com.lord.employeeservice.dto.JobRoleResponse;
 import com.lord.employeeservice.model.JobRole;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-01-28T14:35:36-0400",
+    date = "2024-01-29T11:28:39-0400",
     comments = "version: 1.6.0.Beta1, compiler: Eclipse JDT (IDE) 3.34.0.v20230523-1233, environment: Java 17.0.7 (Oracle Corporation)"
 )
 public class JobRoleMapperImpl implements JobRoleMapper {
@@ -48,5 +50,19 @@ public class JobRoleMapperImpl implements JobRoleMapper {
         jobRoleResponse.setRole( jobRole.getRole() );
 
         return jobRoleResponse;
+    }
+
+    @Override
+    public List<JobRoleResponse> jobRolesToResponses(List<JobRole> jobRoles) {
+        if ( jobRoles == null ) {
+            return null;
+        }
+
+        List<JobRoleResponse> list = new ArrayList<JobRoleResponse>( jobRoles.size() );
+        for ( JobRole jobRole : jobRoles ) {
+            list.add( jobRoleToResponse( jobRole ) );
+        }
+
+        return list;
     }
 }

@@ -32,8 +32,7 @@ public class JobRole {
 	
 	private int holiday;
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name="deduction_id", referencedColumnName = "id")
+	@OneToOne(mappedBy = "jobRole")
 	private Deduction deduction;
 
 	public Long getId() {

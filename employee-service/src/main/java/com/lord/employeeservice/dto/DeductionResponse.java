@@ -26,6 +26,12 @@ private Long id;
 	private BigDecimal loanDiscount;
 	
 	
+	public String getJobRole() {
+		return jobRole;
+	}
+	public void setJobRole(String jobRole) {
+		this.jobRole = jobRole;
+	}
 
 	public Long getId() {
 		return id;
