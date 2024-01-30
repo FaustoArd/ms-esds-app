@@ -54,7 +54,7 @@ public class EmployeeController {
 		List<EmployeeResponse> responses = employeeService.findAllEmployees();
 		return ResponseEntity.ok(responses);
 	}
-	@GetMapping("job_role_all")
+	@GetMapping("/job_role_all")
 	ResponseEntity<List<JobRoleResponse>> findAllJobRoles(){
 		List<JobRoleResponse> responses = employeeService.findallJobRoles();
 		return ResponseEntity.ok(responses);

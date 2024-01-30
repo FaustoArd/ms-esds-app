@@ -57,7 +57,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		log.info("Create Job Role");
 		JobRole jobRole = JobRoleMapper.INSTANCE.dtoToJobRole(jobRoleDto);
 		JobRole savedJobRole = jobRoleDao.save(jobRole);
-		log.info("Employee saved sucessfully: " + savedJobRole.getRole());
+		log.info("Job Role saved sucessfully: " + savedJobRole.getRole());
 		return savedJobRole.getRole();
 	}
 

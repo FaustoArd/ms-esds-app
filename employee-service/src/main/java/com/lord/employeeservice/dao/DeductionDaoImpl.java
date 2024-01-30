@@ -2,10 +2,13 @@ package com.lord.employeeservice.dao;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.lord.employeeservice.exception.ItemNotFoundException;
 import com.lord.employeeservice.model.Deduction;
 import com.lord.employeeservice.repository.DeductionRepository;
 
+@Service
 public class DeductionDaoImpl implements ServiceDao<Deduction> {
 	
 	@Autowired

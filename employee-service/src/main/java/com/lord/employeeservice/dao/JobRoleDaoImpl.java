@@ -2,10 +2,13 @@ package com.lord.employeeservice.dao;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.lord.employeeservice.exception.ItemNotFoundException;
 import com.lord.employeeservice.model.JobRole;
 import com.lord.employeeservice.repository.JobRoleRepository;
 
+@Service
 public class JobRoleDaoImpl implements ServiceDao<JobRole> {
 
 	private final JobRoleRepository jobRoleRepository;

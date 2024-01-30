@@ -3,11 +3,13 @@ package com.lord.employeeservice.dao;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.lord.employeeservice.exception.ItemNotFoundException;
 import com.lord.employeeservice.model.Employee;
 import com.lord.employeeservice.repository.EmployeeRepository;
 
+@Service
 public class EmployeeDaoImpl implements ServiceDao<Employee> {
 	
 	@Autowired
