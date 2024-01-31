@@ -10,7 +10,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-01-29T11:22:13-0400",
+    date = "2024-01-30T22:46:37-0300",
     comments = "version: 1.6.0.Beta1, compiler: Eclipse JDT (IDE) 3.34.0.v20230523-1233, environment: Java 17.0.7 (Oracle Corporation)"
 )
 public class DeductionMapperImpl implements DeductionMapper {
@@ -24,15 +24,15 @@ public class DeductionMapperImpl implements DeductionMapper {
         Deduction deduction = new Deduction();
 
         deduction.setJobRole( deductionDtoToJobRole( deductionDto ) );
-        deduction.setBonificationDiscount( deductionDto.getBonificationDiscount() );
-        deduction.setFreeDayDiscount( deductionDto.getFreeDayDiscount() );
         deduction.setId( deductionDto.getId() );
-        deduction.setInss( deductionDto.getInss() );
-        deduction.setInsurance( deductionDto.getInsurance() );
-        deduction.setLoanDiscount( deductionDto.getLoanDiscount() );
         deduction.setRetirement( deductionDto.getRetirement() );
-        deduction.setSocialShare( deductionDto.getSocialShare() );
+        deduction.setInss( deductionDto.getInss() );
         deduction.setSocialWork( deductionDto.getSocialWork() );
+        deduction.setSocialShare( deductionDto.getSocialShare() );
+        deduction.setInsurance( deductionDto.getInsurance() );
+        deduction.setFreeDayDiscount( deductionDto.getFreeDayDiscount() );
+        deduction.setBonificationDiscount( deductionDto.getBonificationDiscount() );
+        deduction.setLoanDiscount( deductionDto.getLoanDiscount() );
 
         return deduction;
     }
@@ -46,15 +46,15 @@ public class DeductionMapperImpl implements DeductionMapper {
         DeductionResponse deductionResponse = new DeductionResponse();
 
         deductionResponse.setJobRole( deductionJobRoleRole( deduction ) );
-        deductionResponse.setBonificationDiscount( deduction.getBonificationDiscount() );
-        deductionResponse.setFreeDayDiscount( deduction.getFreeDayDiscount() );
         deductionResponse.setId( deduction.getId() );
-        deductionResponse.setInss( deduction.getInss() );
-        deductionResponse.setInsurance( deduction.getInsurance() );
-        deductionResponse.setLoanDiscount( deduction.getLoanDiscount() );
         deductionResponse.setRetirement( deduction.getRetirement() );
-        deductionResponse.setSocialShare( deduction.getSocialShare() );
+        deductionResponse.setInss( deduction.getInss() );
         deductionResponse.setSocialWork( deduction.getSocialWork() );
+        deductionResponse.setSocialShare( deduction.getSocialShare() );
+        deductionResponse.setInsurance( deduction.getInsurance() );
+        deductionResponse.setFreeDayDiscount( deduction.getFreeDayDiscount() );
+        deductionResponse.setBonificationDiscount( deduction.getBonificationDiscount() );
+        deductionResponse.setLoanDiscount( deduction.getLoanDiscount() );
 
         return deductionResponse;
     }

@@ -10,7 +10,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-01-28T14:26:03-0400",
+    date = "2024-01-30T22:46:37-0300",
     comments = "version: 1.6.0.Beta1, compiler: Eclipse JDT (IDE) 3.34.0.v20230523-1233, environment: Java 17.0.7 (Oracle Corporation)"
 )
 public class EmployeeMapperImpl implements EmployeeMapper {
@@ -25,12 +25,12 @@ public class EmployeeMapperImpl implements EmployeeMapper {
 
         employeeResponse.setJobRole( employeeJobRoleRole( employee ) );
         employeeResponse.setJobRoleId( employeeJobRoleId( employee ) );
-        employeeResponse.setDni( employee.getDni() );
-        employeeResponse.setEmail( employee.getEmail() );
         employeeResponse.setId( employee.getId() );
-        employeeResponse.setLastname( employee.getLastname() );
         employeeResponse.setName( employee.getName() );
+        employeeResponse.setLastname( employee.getLastname() );
         employeeResponse.setPhone( employee.getPhone() );
+        employeeResponse.setEmail( employee.getEmail() );
+        employeeResponse.setDni( employee.getDni() );
 
         return employeeResponse;
     }
@@ -44,12 +44,12 @@ public class EmployeeMapperImpl implements EmployeeMapper {
         Employee employee = new Employee();
 
         employee.setJobRole( employeeDtoToJobRole( employeeDto ) );
-        employee.setDni( employeeDto.getDni() );
-        employee.setEmail( employeeDto.getEmail() );
         employee.setId( employeeDto.getId() );
-        employee.setLastname( employeeDto.getLastname() );
         employee.setName( employeeDto.getName() );
+        employee.setLastname( employeeDto.getLastname() );
         employee.setPhone( employeeDto.getPhone() );
+        employee.setEmail( employeeDto.getEmail() );
+        employee.setDni( employeeDto.getDni() );
 
         return employee;
     }
