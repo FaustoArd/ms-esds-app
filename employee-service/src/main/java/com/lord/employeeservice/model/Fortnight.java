@@ -24,9 +24,11 @@ public class Fortnight {
 	
 	private Calendar date;
 	
-	private String forthNightText;
+	private String fortNightDateText;
 	
 	private int hoursQuantity;
+	
+	private Calendar lastDepositDate;
 	
 	private BigDecimal hours;
 	
@@ -87,7 +89,14 @@ public class Fortnight {
 		this.hoursQuantity = hoursQuantity;
 	}
 	
-	
+	public Calendar getLastDepositDate() {
+		return lastDepositDate;
+	}
+
+	public void setLastDepositDate(Calendar lastDepositDate) {
+		this.lastDepositDate = lastDepositDate;
+	}
+
 
 	public BigDecimal getHours() {
 		return hours;
@@ -248,12 +257,12 @@ public class Fortnight {
 		this.date = date;
 	}
 
-	public String getForthNightText() {
-		return forthNightText;
+	public String getFortNightDateText() {
+		return fortNightDateText;
 	}
 
-	public void setForthNightText(String forthNightText) {
-		this.forthNightText = forthNightText;
+	public void setForthNightDateText(String fortNightDateText) {
+		this.fortNightDateText = fortNightDateText;
 	}
 
 	public String getTotalPayText() {

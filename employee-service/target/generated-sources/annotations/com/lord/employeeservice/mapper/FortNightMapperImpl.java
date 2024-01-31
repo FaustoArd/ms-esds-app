@@ -10,7 +10,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-01-31T16:35:37-0300",
+    date = "2024-01-31T19:21:26-0300",
     comments = "version: 1.6.0.Beta1, compiler: Eclipse JDT (IDE) 3.34.0.v20230523-1233, environment: Java 17.0.7 (Oracle Corporation)"
 )
 public class FortNightMapperImpl implements FortNightMapper {
@@ -49,13 +49,13 @@ public class FortNightMapperImpl implements FortNightMapper {
         fortNightResponse.setExtras50( fortnight.getExtras50() );
         fortNightResponse.setExtrasQuantity100( fortnight.getExtrasQuantity100() );
         fortNightResponse.setExtrasQuantity50( fortnight.getExtrasQuantity50() );
-        fortNightResponse.setForthNightText( fortnight.getForthNightText() );
         fortNightResponse.setFreeDayDiscount( fortnight.getFreeDayDiscount() );
         fortNightResponse.setHolidayDay( fortnight.getHolidayDay() );
         fortNightResponse.setHours( fortnight.getHours() );
         fortNightResponse.setHoursQuantity( fortnight.getHoursQuantity() );
         fortNightResponse.setInss( fortnight.getInss() );
         fortNightResponse.setInsurance( fortnight.getInsurance() );
+        fortNightResponse.setLastDepositDate( fortnight.getLastDepositDate() );
         fortNightResponse.setLoanDiscount( fortnight.getLoanDiscount() );
         fortNightResponse.setPrize( fortnight.getPrize() );
         fortNightResponse.setRetirement( fortnight.getRetirement() );

@@ -5,11 +5,13 @@ import java.util.Calendar;
 
 public class FortNightResponse {
 
-	private String forthNightText;
+	private String forthNightDateText;
 	
 	private Calendar date;
 	
 	private int hoursQuantity;
+	
+	private Calendar lastDepositDate;
 	
 	private BigDecimal hours;
 	
@@ -69,6 +71,15 @@ public class FortNightResponse {
 	public void setHoursQuantity(int hoursQuantity) {
 		this.hoursQuantity = hoursQuantity;
 	}
+	
+	public Calendar getLastDepositDate() {
+		return lastDepositDate;
+	}
+
+	public void setLastDepositDate(Calendar lastDepositDate) {
+		this.lastDepositDate = lastDepositDate;
+	}
+
 
 	public BigDecimal getExtras50() {
 		return extras50;
@@ -223,12 +234,12 @@ public class FortNightResponse {
 		this.totalPay = totalPay;
 	}
 
-	public String getForthNightText() {
-		return forthNightText;
+	public String getForthNightDateText() {
+		return forthNightDateText;
 	}
 
-	public void setForthNightText(String forthNightText) {
-		this.forthNightText = forthNightText;
+	public void setForthNightDateText(String forthNightDateText) {
+		this.forthNightDateText = forthNightDateText;
 	}
 
 	public Calendar getDate() {

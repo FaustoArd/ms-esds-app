@@ -22,6 +22,8 @@
   	<module>discovery-server</module>
   	<module>api-gateway</module>
   	<module>distance-service</module>
+  	<module>enterprise-service</module>
+  	<module>user-service</module>
   </modules>
    <properties>
     <spring-cloud.version>2023.0.0</spring-cloud.version>

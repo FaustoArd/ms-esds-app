@@ -10,6 +10,8 @@ public class FortNightDto {
 	
 	private Calendar date;
 	
+	private String fortNightDateText;
+	
 	private int hoursQuantity;
 	
 	private int extrasQuantity50;
@@ -63,6 +65,14 @@ public class FortNightDto {
 
 	public void setDate(Calendar date) {
 		this.date = date;
+	}
+
+	public String getFortNightDateText() {
+		return fortNightDateText;
+	}
+
+	public void setFortNightDateText(String fortNightDateText) {
+		this.fortNightDateText = fortNightDateText;
 	}
 	
 	
