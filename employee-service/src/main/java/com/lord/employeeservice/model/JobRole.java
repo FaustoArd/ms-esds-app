@@ -26,6 +26,8 @@ public class JobRole {
 	
 	private BigDecimal prize;
 	
+	private BigDecimal holidayDayPercentage ;
+	
 	private int holiday;
 	
 	
@@ -88,7 +90,14 @@ public class JobRole {
 	}
 
 
-	
+	public BigDecimal getHolidayDayPercentage() {
+		return holidayDayPercentage;
+	}
+
+	public void setHolidayDayPercentage(BigDecimal holidayDayPercentage) {
+		this.holidayDayPercentage = holidayDayPercentage;
+	}
+
 	
 	
 

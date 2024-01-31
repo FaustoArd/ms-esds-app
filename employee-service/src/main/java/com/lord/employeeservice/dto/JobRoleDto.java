@@ -18,6 +18,8 @@ public class JobRoleDto {
 	
 	private int holiday;
 
+	private BigDecimal holidayDayPercentage;
+	
 	public Long getId() {
 		return id;
 	}
@@ -73,6 +75,13 @@ public class JobRoleDto {
 	public void setHoliday(int holiday) {
 		this.holiday = holiday;
 	}
-	
+	public BigDecimal getHolidayDayPercentage() {
+		return holidayDayPercentage;
+	}
+
+	public void setHolidayDayPercentage(BigDecimal holidayDayPercentage) {
+		this.holidayDayPercentage = holidayDayPercentage;
+	}
+
 	
 }

@@ -55,6 +55,7 @@ public class FortNightServiceTest {
 		jobRole.setPayExtraHour50(new BigDecimal(961.23));
 		jobRole.setPayExtraHour100(new BigDecimal(1923));
 		jobRole.setPrize(new BigDecimal(20));
+		jobRole.setHolidayDayPercentage(new BigDecimal(10));
 		jobRole.setHoliday(15);
 		 savedJobRole =  jobRoleDao.save(jobRole);
 		
@@ -86,10 +87,11 @@ public class FortNightServiceTest {
 	void testFortNight() {
 		FortNightDto fortNightDto = new FortNightDto();
 		fortNightDto.setEmployeeId(1L);
-		fortNightDto.setExtrasNumber(0);
-		fortNightDto.setHours(90);
+		fortNightDto.setExtrasQuantity50(0);
+		fortNightDto.setHoursQuantity(90);
+		FortNightResponse fortNightResponse = forthNightService.createForthNight(fortNightDto);
 		
-		FortNightResponse fortNightResponse
+		assertEquals(fortNightResponse.getEmployeeName(), "Alberto Rojas");
 		
 	}
 

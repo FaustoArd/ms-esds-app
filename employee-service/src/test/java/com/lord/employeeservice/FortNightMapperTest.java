@@ -19,7 +19,7 @@ public class FortNightMapperTest {
 		employee.setId(3L);
 		employee.setLastname("Maracano");
 		Fortnight fortnight = new Fortnight();
-		fortnight.setHours(50);
+		fortnight.setHoursQuantity(50);
 		fortnight.setEmployee(employee);
 		FortNightResponse response = FortNightMapper.INSTANCE.fortNightToResponse(fortnight);
 		

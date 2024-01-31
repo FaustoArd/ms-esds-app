@@ -1,6 +1,8 @@
 package com.lord.employeeservice.model;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -19,11 +21,17 @@ public class Fortnight {
 	@GeneratedValue(strategy =  GenerationType.AUTO)
 	private Long id;
 	
-	private int hours;
+	private int hoursQuantity;
 	
-	private int extrasNumber;
+	private BigDecimal hours;
 	
-	private BigDecimal extras;
+	private int extrasQuantity50;
+	
+	private int extrasQuantity100;
+	
+	private BigDecimal extras50;
+	
+	private BigDecimal extras100;
 	
 	private BigDecimal prize;
 	
@@ -47,7 +55,9 @@ public class Fortnight {
 	
 	private BigDecimal totalDeduction;
 	
-	@ManyToOne(cascade =  CascadeType.ALL,fetch = FetchType.LAZY)
+	private BigDecimal holidayDay;
+	
+	@ManyToOne(cascade =  CascadeType.MERGE,fetch = FetchType.LAZY)
 	@JoinColumn(name="employee_id", referencedColumnName = "id")
 	private Employee employee;
 
@@ -58,31 +68,56 @@ public class Fortnight {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
 
-	public int getHours() {
+	public int getHoursQuantity() {
+		return hoursQuantity;
+	}
+
+	public void setHoursQuantity(int hoursQuantity) {
+		this.hoursQuantity = hoursQuantity;
+	}
+	
+	
+
+	public BigDecimal getHours() {
 		return hours;
 	}
 
-	public void setHours(int hours) {
+	public void setHours(BigDecimal hours) {
 		this.hours = hours;
 	}
-	
-	
 
-	public int getExtrasNumber() {
-		return extrasNumber;
+	public int getExtrasQuantity50() {
+		return extrasQuantity50;
 	}
 
-	public void setExtrasNumber(int extrasNumber) {
-		this.extrasNumber = extrasNumber;
+	public void setExtrasQuantity50(int extrasQuantity50) {
+		this.extrasQuantity50 = extrasQuantity50;
 	}
 
-	public BigDecimal getExtras() {
-		return extras;
+	public int getExtrasQuantity100() {
+		return extrasQuantity100;
 	}
 
-	public void setExtras(BigDecimal extras) {
-		this.extras = extras;
+	public void setExtrasQuantity100(int extrasQuantity100) {
+		this.extrasQuantity100 = extrasQuantity100;
+	}
+
+	public BigDecimal getExtras50() {
+		return extras50;
+	}
+
+	public void setExtras50(BigDecimal extras50) {
+		this.extras50 = extras50;
+	}
+
+	public BigDecimal getExtras100() {
+		return extras100;
+	}
+
+	public void setExtras100(BigDecimal extras100) {
+		this.extras100 = extras100;
 	}
 
 	public BigDecimal getPrize() {
@@ -180,5 +215,11 @@ public class Fortnight {
 		this.totalDeduction = totalDeduction;
 	}
 	
+	public BigDecimal getHolidayDay() {
+		return holidayDay;
+	}
 
+	public void setHolidayDay(BigDecimal holidayDay) {
+		this.holidayDay = holidayDay;
+	}
 }

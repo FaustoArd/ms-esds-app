@@ -4,10 +4,18 @@ import java.math.BigDecimal;
 
 public class FortNightResponse {
 
-	private int hours;
+	private int hoursQuantity;
+	
+	private BigDecimal hours;
+	
+	private int extrasQuantity50;
 
-	private BigDecimal extras;
+	private int extrasQuantity100;
+	
+	private BigDecimal extras50;
 
+	private BigDecimal extras100;
+	
 	private BigDecimal prize;
 
 	private BigDecimal retirement;
@@ -33,21 +41,57 @@ public class FortNightResponse {
 	private BigDecimal totalRetribution;
 
 	private BigDecimal totalDeduction;
+	
+	private BigDecimal holidayDay;
 
-	public int getHours() {
+	public BigDecimal getHours() {
 		return hours;
 	}
 
-	public void setHours(int hours) {
+	public void setHours(BigDecimal hours) {
 		this.hours = hours;
 	}
+	
 
-	public BigDecimal getExtras() {
-		return extras;
+	public int getHoursQuantity() {
+		return hoursQuantity;
 	}
 
-	public void setExtras(BigDecimal extras) {
-		this.extras = extras;
+	public void setHoursQuantity(int hoursQuantity) {
+		this.hoursQuantity = hoursQuantity;
+	}
+
+	public BigDecimal getExtras50() {
+		return extras50;
+	}
+
+	public void setExtras50(BigDecimal extras50) {
+		this.extras50 = extras50;
+	}
+	
+
+	public BigDecimal getExtras100() {
+		return extras100;
+	}
+
+	public void setExtras100(BigDecimal extras100) {
+		this.extras100 = extras100;
+	}
+	
+	public int getExtrasQuantity50() {
+		return extrasQuantity50;
+	}
+
+	public void setExtrasQuantity50(int extrasQuantity50) {
+		this.extrasQuantity50 = extrasQuantity50;
+	}
+
+	public int getExtrasQuantity100() {
+		return extrasQuantity100;
+	}
+
+	public void setExtrasQuantity100(int extrasQuantity100) {
+		this.extrasQuantity100 = extrasQuantity100;
 	}
 
 	public BigDecimal getPrize() {
@@ -152,6 +196,14 @@ public class FortNightResponse {
 
 	public void setTotalDeduction(BigDecimal totalDeduction) {
 		this.totalDeduction = totalDeduction;
+	}
+	
+	public BigDecimal getHolidayDay() {
+		return holidayDay;
+	}
+
+	public void setHolidayDay(BigDecimal holidayDay) {
+		this.holidayDay = holidayDay;
 	}
 
 }
