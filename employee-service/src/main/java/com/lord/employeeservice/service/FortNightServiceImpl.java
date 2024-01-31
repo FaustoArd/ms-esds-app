@@ -11,6 +11,7 @@ import com.lord.employeeservice.dao.FortNightDaoImpl;
 import com.lord.employeeservice.dao.JobRoleDao;
 
 import com.lord.employeeservice.dto.FortNightDto;
+import com.lord.employeeservice.dto.FortNightResponse;
 import com.lord.employeeservice.model.Deduction;
 import com.lord.employeeservice.model.Employee;
 import com.lord.employeeservice.model.Fortnight;
@@ -39,12 +40,18 @@ public class FortNightServiceImpl implements ForthNightService {
 	}
 
 	@Override
-	public String createForthNight(FortNightDto fortNightDto) {
+	public FortNightResponse createForthNight(FortNightDto fortNightDto) {
 		Employee employee = employeeDao.findById(fortNightDto.getEmployeeId());
 		JobRole jobRole = new JobRole();
 		jobRole.setId(employee.getJobRole().getId());
 		Deduction deduction = deductionDao.findByJobRole(jobRole);
-		return "";
+		
+		return new FortNightResponse();
+	}
+
+	@Override
+	public Fortnight calculate(FortNightDto fortNightDto) {
+		
 	}
 
 }

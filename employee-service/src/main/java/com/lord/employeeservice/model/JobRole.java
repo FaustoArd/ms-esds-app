@@ -28,8 +28,7 @@ public class JobRole {
 	
 	private int holiday;
 	
-	@OneToOne(mappedBy = "jobRole")
-	private Deduction deduction;
+	
 
 	public Long getId() {
 		return id;
@@ -88,13 +87,7 @@ public class JobRole {
 		this.holiday = holiday;
 	}
 
-	public Deduction getDeduction() {
-		return deduction;
-	}
 
-	public void setDeduction(Deduction deduction) {
-		this.deduction = deduction;
-	}
 	
 	
 	

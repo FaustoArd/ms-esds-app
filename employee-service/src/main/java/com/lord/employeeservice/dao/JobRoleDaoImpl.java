@@ -2,6 +2,7 @@ package com.lord.employeeservice.dao;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.lord.employeeservice.exception.ItemNotFoundException;
@@ -11,6 +12,7 @@ import com.lord.employeeservice.repository.JobRoleRepository;
 @Service
 public class JobRoleDaoImpl implements JobRoleDao {
 
+	@Autowired
 	private final JobRoleRepository jobRoleRepository;
 
 	private static final String jobRoleNotFound = "JobRole not found";

@@ -36,7 +36,7 @@ public class Deduction {
 	
 	private BigDecimal loanDiscount;
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
 	@JoinColumn(name="job_role_id", referencedColumnName = "id")
 	private JobRole jobRole;
 	
