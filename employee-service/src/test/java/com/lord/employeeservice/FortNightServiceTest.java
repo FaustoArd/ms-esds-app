@@ -52,8 +52,7 @@ public class FortNightServiceTest {
 		
 		jobRole.setRole("Capataz");
 		jobRole.setPayHour(new BigDecimal(1923));
-		jobRole.setPayExtraHour50(new BigDecimal(961.23));
-		jobRole.setPayExtraHour100(new BigDecimal(1923));
+	
 		jobRole.setPrize(new BigDecimal(20));
 		jobRole.setHolidayDayPercentage(new BigDecimal(10));
 		jobRole.setHoliday(15);
@@ -63,7 +62,7 @@ public class FortNightServiceTest {
 		deduction.setRetirement(new BigDecimal(11));
 		deduction.setInss(new BigDecimal(3));
 		deduction.setSocialWork(new BigDecimal(3));
-		deduction.setSocialShare(new BigDecimal(2.5));
+		deduction.setSocialShare(new BigDecimal(2.50));
 		deduction.setJobRole(savedJobRole);
 		savedDeduction = deductionDao.save(deduction);
 		
@@ -78,7 +77,7 @@ public class FortNightServiceTest {
 		
 		assertEquals(savedJobRole.getRole(), "Capataz");
 		assertEquals(savedJobRole.getPayHour().intValue(), 1923);
-		assertEquals(savedJobRole.getPayExtraHour50().doubleValue(), 961.23);
+	
 		
 	}
 	
@@ -88,11 +87,23 @@ public class FortNightServiceTest {
 		FortNightDto fortNightDto = new FortNightDto();
 		fortNightDto.setEmployeeId(1L);
 		fortNightDto.setExtrasQuantity50(0);
+		fortNightDto.setExtrasQuantity100(0);
 		fortNightDto.setHoursQuantity(90);
 		FortNightResponse fortNightResponse = forthNightService.createForthNight(fortNightDto);
 		
 		assertEquals(fortNightResponse.getEmployeeName(), "Alberto Rojas");
-		
+		assertEquals(fortNightResponse.getHours().doubleValue(), 173070.00);
+		assertEquals(fortNightResponse.getExtras50().doubleValue(), 0.00);
+		assertEquals(fortNightResponse.getExtras100().doubleValue(), 0.00);
+		assertEquals(fortNightResponse.getPrize().doubleValue(), 34614.00);
+		assertEquals(fortNightResponse.getHolidayDay().doubleValue(), 17307.00);
+		assertEquals(fortNightResponse.getRetirement().doubleValue(), 24749.01);
+		assertEquals(fortNightResponse.getInss().doubleValue(), 6749.73);
+		assertEquals(fortNightResponse.getSocialWork().doubleValue(), 6749.73);
+		assertEquals(fortNightResponse.getSocialShare().doubleValue(), 5624.775);
+		assertEquals(fortNightResponse.getTotalRetribution().doubleValue(), 224991.00);
+		assertEquals(fortNightResponse.getTotalDeduction().doubleValue(), 43873.245);
+		assertEquals(fortNightResponse.getTotalPay().doubleValue(), 181117.755);
 	}
 
 }

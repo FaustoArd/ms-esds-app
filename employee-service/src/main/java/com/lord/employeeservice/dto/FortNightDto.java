@@ -1,10 +1,14 @@
 package com.lord.employeeservice.dto;
 
+import java.util.Calendar;
+
 public class FortNightDto {
 
 	private Long id;
 	
 	private Long employeeId;
+	
+	private Calendar date;
 	
 	private int hoursQuantity;
 	
@@ -52,6 +56,16 @@ public class FortNightDto {
 	public void setExtrasQuantity100(int extrasQuantity100) {
 		this.extrasQuantity100 = extrasQuantity100;
 	}
+
+	public Calendar getDate() {
+		return date;
+	}
+
+	public void setDate(Calendar date) {
+		this.date = date;
+	}
+	
+	
 	
 	
 	

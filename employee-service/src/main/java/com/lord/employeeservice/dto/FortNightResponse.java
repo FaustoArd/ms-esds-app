@@ -1,9 +1,14 @@
 package com.lord.employeeservice.dto;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
 
 public class FortNightResponse {
 
+	private String forthNightText;
+	
+	private Calendar date;
+	
 	private int hoursQuantity;
 	
 	private BigDecimal hours;
@@ -43,6 +48,10 @@ public class FortNightResponse {
 	private BigDecimal totalDeduction;
 	
 	private BigDecimal holidayDay;
+	
+	private BigDecimal totalPay;
+	
+	private String totalPayText;
 
 	public BigDecimal getHours() {
 		return hours;
@@ -205,5 +214,38 @@ public class FortNightResponse {
 	public void setHolidayDay(BigDecimal holidayDay) {
 		this.holidayDay = holidayDay;
 	}
+	
+	public BigDecimal getTotalPay() {
+		return totalPay;
+	}
+
+	public void setTotalPay(BigDecimal totalPay) {
+		this.totalPay = totalPay;
+	}
+
+	public String getForthNightText() {
+		return forthNightText;
+	}
+
+	public void setForthNightText(String forthNightText) {
+		this.forthNightText = forthNightText;
+	}
+
+	public Calendar getDate() {
+		return date;
+	}
+
+	public void setDate(Calendar date) {
+		this.date = date;
+	}
+
+	public String getTotalPayText() {
+		return totalPayText;
+	}
+
+	public void setTotalPayText(String totalPayText) {
+		this.totalPayText = totalPayText;
+	}
+	
 
 }

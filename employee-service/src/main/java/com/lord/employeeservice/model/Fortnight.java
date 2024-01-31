@@ -2,6 +2,7 @@ package com.lord.employeeservice.model;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Calendar;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -20,6 +21,10 @@ public class Fortnight {
 	@Id
 	@GeneratedValue(strategy =  GenerationType.AUTO)
 	private Long id;
+	
+	private Calendar date;
+	
+	private String forthNightText;
 	
 	private int hoursQuantity;
 	
@@ -56,6 +61,10 @@ public class Fortnight {
 	private BigDecimal totalDeduction;
 	
 	private BigDecimal holidayDay;
+	
+	private BigDecimal totalPay;
+	
+	private String totalPayText;
 	
 	@ManyToOne(cascade =  CascadeType.MERGE,fetch = FetchType.LAZY)
 	@JoinColumn(name="employee_id", referencedColumnName = "id")
@@ -222,4 +231,38 @@ public class Fortnight {
 	public void setHolidayDay(BigDecimal holidayDay) {
 		this.holidayDay = holidayDay;
 	}
+
+	public BigDecimal getTotalPay() {
+		return totalPay;
+	}
+
+	public void setTotalPay(BigDecimal totalPay) {
+		this.totalPay = totalPay;
+	}
+
+	public Calendar getDate() {
+		return date;
+	}
+
+	public void setDate(Calendar date) {
+		this.date = date;
+	}
+
+	public String getForthNightText() {
+		return forthNightText;
+	}
+
+	public void setForthNightText(String forthNightText) {
+		this.forthNightText = forthNightText;
+	}
+
+	public String getTotalPayText() {
+		return totalPayText;
+	}
+
+	public void setTotalPayText(String totalPayText) {
+		this.totalPayText = totalPayText;
+	}
+	
+	
 }

@@ -9,7 +9,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-01-31T15:06:59-0300",
+    date = "2024-01-31T16:35:37-0300",
     comments = "version: 1.6.0.Beta1, compiler: Eclipse JDT (IDE) 3.34.0.v20230523-1233, environment: Java 17.0.7 (Oracle Corporation)"
 )
 public class JobRoleMapperImpl implements JobRoleMapper {
@@ -25,8 +25,6 @@ public class JobRoleMapperImpl implements JobRoleMapper {
         jobRole.setHoliday( jobRoleDto.getHoliday() );
         jobRole.setHolidayDayPercentage( jobRoleDto.getHolidayDayPercentage() );
         jobRole.setId( jobRoleDto.getId() );
-        jobRole.setPayExtraHour100( jobRoleDto.getPayExtraHour100() );
-        jobRole.setPayExtraHour50( jobRoleDto.getPayExtraHour50() );
         jobRole.setPayHour( jobRoleDto.getPayHour() );
         jobRole.setPrize( jobRoleDto.getPrize() );
         jobRole.setRole( jobRoleDto.getRole() );
@@ -45,8 +43,6 @@ public class JobRoleMapperImpl implements JobRoleMapper {
         jobRoleResponse.setHoliday( jobRole.getHoliday() );
         jobRoleResponse.setHolidayDayPercentage( jobRole.getHolidayDayPercentage() );
         jobRoleResponse.setId( jobRole.getId() );
-        jobRoleResponse.setPayExtraHour100( jobRole.getPayExtraHour100() );
-        jobRoleResponse.setPayExtraHour50( jobRole.getPayExtraHour50() );
         jobRoleResponse.setPayHour( jobRole.getPayHour() );
         jobRoleResponse.setPrize( jobRole.getPrize() );
         jobRoleResponse.setRole( jobRole.getRole() );

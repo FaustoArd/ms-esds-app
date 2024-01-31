@@ -10,7 +10,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-01-31T15:19:58-0300",
+    date = "2024-01-31T16:35:37-0300",
     comments = "version: 1.6.0.Beta1, compiler: Eclipse JDT (IDE) 3.34.0.v20230523-1233, environment: Java 17.0.7 (Oracle Corporation)"
 )
 public class FortNightMapperImpl implements FortNightMapper {
@@ -24,6 +24,7 @@ public class FortNightMapperImpl implements FortNightMapper {
         Fortnight fortnight = new Fortnight();
 
         fortnight.setEmployee( fortNightDtoToEmployee( fortNightDto ) );
+        fortnight.setDate( fortNightDto.getDate() );
         fortnight.setExtrasQuantity100( fortNightDto.getExtrasQuantity100() );
         fortnight.setExtrasQuantity50( fortNightDto.getExtrasQuantity50() );
         fortnight.setHoursQuantity( fortNightDto.getHoursQuantity() );
@@ -43,10 +44,12 @@ public class FortNightMapperImpl implements FortNightMapper {
         fortNightResponse.setEmployeeName( FortNightMapper.getEmployeeNameAndLastname( fortnight ) );
         fortNightResponse.setEmployeeId( fortnightEmployeeId( fortnight ) );
         fortNightResponse.setBonificationDiscount( fortnight.getBonificationDiscount() );
+        fortNightResponse.setDate( fortnight.getDate() );
         fortNightResponse.setExtras100( fortnight.getExtras100() );
         fortNightResponse.setExtras50( fortnight.getExtras50() );
         fortNightResponse.setExtrasQuantity100( fortnight.getExtrasQuantity100() );
         fortNightResponse.setExtrasQuantity50( fortnight.getExtrasQuantity50() );
+        fortNightResponse.setForthNightText( fortnight.getForthNightText() );
         fortNightResponse.setFreeDayDiscount( fortnight.getFreeDayDiscount() );
         fortNightResponse.setHolidayDay( fortnight.getHolidayDay() );
         fortNightResponse.setHours( fortnight.getHours() );
@@ -59,6 +62,8 @@ public class FortNightMapperImpl implements FortNightMapper {
         fortNightResponse.setSocialShare( fortnight.getSocialShare() );
         fortNightResponse.setSocialWork( fortnight.getSocialWork() );
         fortNightResponse.setTotalDeduction( fortnight.getTotalDeduction() );
+        fortNightResponse.setTotalPay( fortnight.getTotalPay() );
+        fortNightResponse.setTotalPayText( fortnight.getTotalPayText() );
         fortNightResponse.setTotalRetribution( fortnight.getTotalRetribution() );
 
         return fortNightResponse;
