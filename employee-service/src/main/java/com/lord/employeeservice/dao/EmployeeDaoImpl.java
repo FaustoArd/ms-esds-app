@@ -10,7 +10,7 @@ import com.lord.employeeservice.model.Employee;
 import com.lord.employeeservice.repository.EmployeeRepository;
 
 @Service
-public class EmployeeDaoImpl implements ServiceDao<Employee> {
+public class EmployeeDaoImpl implements EmployeeDao {
 	
 	@Autowired
 	private final EmployeeRepository employeeRepository;
@@ -28,7 +28,7 @@ public class EmployeeDaoImpl implements ServiceDao<Employee> {
 	}
 
 	@Override
-	public Employee findyId(Long id) {
+	public Employee findById(Long id) {
 		return employeeRepository.findById(id).orElseThrow(()-> new ItemNotFoundException(employeeNotFound));
 	}
 

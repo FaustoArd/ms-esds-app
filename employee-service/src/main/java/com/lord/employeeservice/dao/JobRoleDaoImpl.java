@@ -9,7 +9,7 @@ import com.lord.employeeservice.model.JobRole;
 import com.lord.employeeservice.repository.JobRoleRepository;
 
 @Service
-public class JobRoleDaoImpl implements ServiceDao<JobRole> {
+public class JobRoleDaoImpl implements JobRoleDao {
 
 	private final JobRoleRepository jobRoleRepository;
 
@@ -26,7 +26,7 @@ public class JobRoleDaoImpl implements ServiceDao<JobRole> {
 	}
 
 	@Override
-	public JobRole findyId(Long id) {
+	public JobRole findById(Long id) {
 		return jobRoleRepository.findById(id).orElseThrow(() -> new ItemNotFoundException(jobRoleNotFound));
 	}
 

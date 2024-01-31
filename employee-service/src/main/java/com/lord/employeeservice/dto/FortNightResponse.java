@@ -5,30 +5,34 @@ import java.math.BigDecimal;
 public class FortNightResponse {
 
 	private int hours;
-	
+
 	private BigDecimal extras;
-	
+
 	private BigDecimal prize;
-	
+
 	private BigDecimal retirement;
-	
+
 	private BigDecimal inss;
-	
+
 	private BigDecimal socialWork;
-	
+
 	private BigDecimal socialShare;
-	
+
 	private BigDecimal insurance;
-	
+
 	private BigDecimal freeDayDiscount;
-	
+
 	private BigDecimal bonificationDiscount;
-	
+
 	private BigDecimal loanDiscount;
-	
+
 	private String employeeName;
-	
+
 	private Long employeeId;
+
+	private BigDecimal totalRetribution;
+
+	private BigDecimal totalDeduction;
 
 	public int getHours() {
 		return hours;
@@ -61,7 +65,6 @@ public class FortNightResponse {
 	public void setRetirement(BigDecimal retirement) {
 		this.retirement = retirement;
 	}
-	
 
 	public BigDecimal getInss() {
 		return inss;
@@ -134,7 +137,21 @@ public class FortNightResponse {
 	public void setEmployeeId(Long employeeId) {
 		this.employeeId = employeeId;
 	}
-	
-	
-	
+
+	public BigDecimal getTotalRetribution() {
+		return totalRetribution;
+	}
+
+	public void setTotalRetribution(BigDecimal totalRetribution) {
+		this.totalRetribution = totalRetribution;
+	}
+
+	public BigDecimal getTotalDeduction() {
+		return totalDeduction;
+	}
+
+	public void setTotalDeduction(BigDecimal totalDeduction) {
+		this.totalDeduction = totalDeduction;
+	}
+
 }

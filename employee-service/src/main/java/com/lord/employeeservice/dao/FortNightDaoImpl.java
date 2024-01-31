@@ -10,7 +10,7 @@ import com.lord.employeeservice.model.Fortnight;
 import com.lord.employeeservice.repository.ForthNightRepository;
 
 @Service
-public class FortNightDaoImpl implements ServiceDao<Fortnight> {
+public class FortNightDaoImpl implements FortNightDao{
 	
 	@Autowired
 	private final ForthNightRepository forthNightRepository;
@@ -27,7 +27,7 @@ public class FortNightDaoImpl implements ServiceDao<Fortnight> {
 	}
 
 	@Override
-	public Fortnight findyId(Long id) {
+	public Fortnight findById(Long id) {
 		return forthNightRepository.findById(id).orElseThrow(()-> new ItemNotFoundException(fortNightNotFound));
 	}
 

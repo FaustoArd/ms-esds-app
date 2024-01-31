@@ -6,7 +6,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.lord.employeeservice.dao.ServiceDao;
+
+import com.lord.employeeservice.dao.EmployeeDao;
+import com.lord.employeeservice.dao.JobRoleDao;
+
 import com.lord.employeeservice.dto.EmployeeDto;
 import com.lord.employeeservice.dto.EmployeeResponse;
 import com.lord.employeeservice.mapper.EmployeeMapper;
@@ -17,14 +20,14 @@ import com.lord.employeeservice.model.JobRole;
 public class EmployeeServiceImpl implements EmployeeService {
 
 	@Autowired
-	private final ServiceDao<Employee> employeeDao;
+	private final EmployeeDao employeeDao;
 	
 	@Autowired
-	private final ServiceDao<JobRole> jobRoleDao;
+	private final JobRoleDao jobRoleDao;
 	
 	private static final Logger log = LoggerFactory.getLogger(EmployeeServiceImpl.class);
 	
-	public EmployeeServiceImpl(ServiceDao<Employee> employeeDao,ServiceDao<JobRole> jobRoleDao) {
+	public EmployeeServiceImpl(EmployeeDao employeeDao,JobRoleDao jobRoleDao) {
 		this.employeeDao = employeeDao;
 		this.jobRoleDao = jobRoleDao;
 		
@@ -34,7 +37,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public String createEmployee(EmployeeDto employeeDto) {
 		log.info("Create employee");
 		Employee employee = EmployeeMapper.INSTANCE.dtoToEmployee(employeeDto);
-		JobRole jobRole = jobRoleDao.findyId(employeeDto.getJobRoleId());
+		JobRole jobRole = jobRoleDao.findById(employeeDto.getJobRoleId());
 		employee.setJobRole(jobRole);
 		Employee savedEmployee = employeeDao.save(employee);
 		log.info("Employee saved sucessfully: " + savedEmployee.getName());
@@ -44,7 +47,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public EmployeeResponse findEmployeeById(Long id) {
 		log.info("Find employee");
-		Employee employee = employeeDao.findyId(id);
+		Employee employee = employeeDao.findById(id);
 		return EmployeeMapper.INSTANCE.employeeToEmployeeResponse(employee);
 	}
 

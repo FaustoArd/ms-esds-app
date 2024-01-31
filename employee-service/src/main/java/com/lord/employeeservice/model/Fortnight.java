@@ -43,6 +43,10 @@ public class Fortnight {
 	
 	private BigDecimal loanDiscount;
 	
+	private BigDecimal totalRetribution;
+	
+	private BigDecimal totalDeduction;
+	
 	@ManyToOne(cascade =  CascadeType.ALL,fetch = FetchType.LAZY)
 	@JoinColumn(name="employee_id", referencedColumnName = "id")
 	private Employee employee;
@@ -158,6 +162,22 @@ public class Fortnight {
 	}
 	public void setEmployee(Employee employee) {
 		this.employee = employee;
+	}
+
+	public BigDecimal getTotalRetribution() {
+		return totalRetribution;
+	}
+
+	public void setTotalRetribution(BigDecimal totalRetribution) {
+		this.totalRetribution = totalRetribution;
+	}
+
+	public BigDecimal getTotalDeduction() {
+		return totalDeduction;
+	}
+
+	public void setTotalDeduction(BigDecimal totalDeduction) {
+		this.totalDeduction = totalDeduction;
 	}
 	
 

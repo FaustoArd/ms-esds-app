@@ -6,7 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.lord.employeeservice.dao.ServiceDao;
+import com.lord.employeeservice.dao.DeductionDao;
+import com.lord.employeeservice.dao.JobRoleDao;
 import com.lord.employeeservice.dto.DeductionDto;
 import com.lord.employeeservice.dto.DeductionResponse;
 import com.lord.employeeservice.mapper.DeductionMapper;
@@ -17,14 +18,14 @@ import com.lord.employeeservice.model.JobRole;
 public class DeductionServiceImpl implements DeductionService {
 
 	@Autowired
-	private final ServiceDao<Deduction> deductionDao;
+	private final DeductionDao deductionDao;
 	
 	@Autowired
-	private final ServiceDao<JobRole> jobRoleDao;
+	private final JobRoleDao jobRoleDao;
 	
 	private static final Logger log = LoggerFactory.getLogger(DeductionServiceImpl.class);
 	
-	public DeductionServiceImpl(ServiceDao<Deduction> deductionDao, ServiceDao<JobRole> jobRoleDao) {
+	public DeductionServiceImpl(DeductionDao deductionDao, JobRoleDao jobRoleDao) {
 		this.deductionDao = deductionDao;
 		this.jobRoleDao = jobRoleDao;
 	}
@@ -33,7 +34,7 @@ public class DeductionServiceImpl implements DeductionService {
 	public String createDeduction(DeductionDto deductionDto) {
 		log.info("Create Deduction");
 		Deduction deduction = DeductionMapper.INSTANCE.dtoToDeduction(deductionDto);
-		JobRole jobRole = jobRoleDao.findyId(deductionDto.getJobRoleId());
+		JobRole jobRole = jobRoleDao.findById(deductionDto.getJobRoleId());
 		deduction.setJobRole(jobRole);
 		Deduction savedDeduction = deductionDao.save(deduction);
 		log.info("Deduction saved sucessfully");
@@ -42,8 +43,8 @@ public class DeductionServiceImpl implements DeductionService {
 
 	@Override
 	public DeductionResponse findDeductionbyId(Long id) {
-		log.info("Find deduction");
-		Deduction deduction = deductionDao.findyId(id);
+		log.info("Find deduction by id");
+		Deduction deduction = deductionDao.findById(id);
 		return DeductionMapper.INSTANCE.deductionToResponse(deduction);
 	}
 

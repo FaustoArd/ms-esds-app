@@ -7,7 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.lord.employeeservice.dao.ServiceDao;
+import com.lord.employeeservice.dao.JobRoleDao;
+
 import com.lord.employeeservice.dto.JobRoleDto;
 import com.lord.employeeservice.dto.JobRoleResponse;
 import com.lord.employeeservice.mapper.JobRoleMapper;
@@ -17,10 +18,10 @@ import com.lord.employeeservice.model.JobRole;
 public class JobRoleServiceImpl implements JobRoleService {
 
 	@Autowired
-	private final ServiceDao<JobRole> jobRoleDao;
+	private final JobRoleDao jobRoleDao;
 	
 	private static final Logger log = LoggerFactory.getLogger(JobRoleServiceImpl.class);	
-	public JobRoleServiceImpl(ServiceDao<JobRole> jobRoleDao) {
+	public JobRoleServiceImpl(JobRoleDao jobRoleDao) {
 		this.jobRoleDao = jobRoleDao;
 	}
 
@@ -36,7 +37,7 @@ public class JobRoleServiceImpl implements JobRoleService {
 	@Override
 	public JobRoleResponse findJobRoleById(Long id) {
 		log.info("Find Job Role");
-		JobRole jobRole = jobRoleDao.findyId(id);
+		JobRole jobRole = jobRoleDao.findById(id);
 		return JobRoleMapper.INSTANCE.jobRoleToResponse(jobRole);
 	}
 
