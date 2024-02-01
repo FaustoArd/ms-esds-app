@@ -53,7 +53,7 @@ public class FortNightServiceTest {
 		jobRole.setRole("Capataz");
 		jobRole.setPayHour(new BigDecimal(1923));
 	
-		jobRole.setPrize(new BigDecimal(20));
+		jobRole.setPrizePercentage(new BigDecimal(20));
 		jobRole.setHolidayDayPercentage(new BigDecimal(10));
 		jobRole.setHoliday(15);
 		 savedJobRole =  jobRoleDao.save(jobRole);

@@ -1,22 +1,9 @@
-package com.lord.userservice.model;
+package com.lord.userservice.dto;
 
 import java.util.Set;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name="users")
-public class UserApp {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+public class UserAppDto {
+	
 	private Long id;
 	
 	private String name;
@@ -29,14 +16,7 @@ public class UserApp {
 	
 	private String password;
 	
-	@Column(name="enterprises_id")
 	private Set<Long> enterprisesId;
-	
-
-
-	public UserApp() {
-		super();
-	}
 
 	public Long getId() {
 		return id;
@@ -85,6 +65,7 @@ public class UserApp {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	public Set<Long> getEnterprisesId() {
 		return enterprisesId;
 	}
@@ -94,5 +75,5 @@ public class UserApp {
 	}
 	
 	
-	
+
 }

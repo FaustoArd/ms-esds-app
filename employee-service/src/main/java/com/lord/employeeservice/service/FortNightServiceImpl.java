@@ -60,7 +60,7 @@ public class FortNightServiceImpl implements ForthNightService {
 		
 		fortnight.setExtras50(payHour50.multiply(new BigDecimal(fortNightDto.getExtrasQuantity50())));
 		fortnight.setExtras100(payHour100.multiply(new BigDecimal(fortNightDto.getExtrasQuantity100())));
-		fortnight.setPrize(fortnight.getHours().multiply(jobRole.getPrize()).divide(new BigDecimal(100)));
+		fortnight.setPrize(fortnight.getHours().multiply(jobRole.getPrizePercentage()).divide(new BigDecimal(100)));
 		fortnight.setHolidayDay(fortnight.getHours().multiply(jobRole.getHolidayDayPercentage()).divide(new BigDecimal(100)));
 		
 		BigDecimal totalExtras = fortnight.getExtras50().add(fortnight.getExtras50())

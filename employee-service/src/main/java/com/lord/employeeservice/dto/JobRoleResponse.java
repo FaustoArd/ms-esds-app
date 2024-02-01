@@ -10,9 +10,7 @@ public class JobRoleResponse {
 	
 	private BigDecimal payHour;
     
-	
-	
-	private BigDecimal prize;
+	private BigDecimal prizePercentage;
 	
 	private int holiday;
 	
@@ -42,12 +40,12 @@ public class JobRoleResponse {
 		this.payHour = payHour;
 	}
 
-public BigDecimal getPrize() {
-		return prize;
+public BigDecimal getPrizePercentage() {
+		return prizePercentage;
 	}
 
-	public void setPrize(BigDecimal prize) {
-		this.prize = prize;
+	public void setPrizePercentage(BigDecimal prizePercentage) {
+		this.prizePercentage = prizePercentage;
 	}
 
 	public int getHoliday() {

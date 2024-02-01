@@ -36,6 +36,16 @@ public class Deduction {
 	
 	private BigDecimal loanDiscount;
 	
+	private Long enterpriseId;
+	
+	public Long getEnterpriseId() {
+		return enterpriseId;
+	}
+
+	public void setEnterpriseId(Long enterpriseId) {
+		this.enterpriseId = enterpriseId;
+	}
+
 	@OneToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
 	@JoinColumn(name="job_role_id", referencedColumnName = "id")
 	private JobRole jobRole;

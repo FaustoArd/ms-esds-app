@@ -17,6 +17,8 @@ public class EmployeeDto {
 	private String jobRole;
 	
 	private Long jobRoleId;
+	
+	private Long enterpriseId;
 
 	public Long getId() {
 		return id;
@@ -81,6 +83,12 @@ public class EmployeeDto {
 	public void setJobroleId(Long jobRoleId) {
 		this.jobRoleId = jobRoleId;
 	}
-	
+	public Long getEnterpriseId() {
+		return enterpriseId;
+	}
+
+	public void setEnterpriseId(Long enterpriseId) {
+		this.enterpriseId = enterpriseId;
+	}
 	
 }

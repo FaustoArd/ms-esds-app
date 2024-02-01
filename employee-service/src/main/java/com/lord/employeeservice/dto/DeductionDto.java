@@ -24,7 +24,15 @@ public class DeductionDto {
 	
 	private BigDecimal loanDiscount;
 	
-	
+	private Long enterpriseId;
+
+	public Long getEnterpriseId() {
+		return enterpriseId;
+	}
+
+	public void setEnterpriseId(Long enterpriseId) {
+		this.enterpriseId = enterpriseId;
+	}
 
 	public Long getId() {
 		return id;

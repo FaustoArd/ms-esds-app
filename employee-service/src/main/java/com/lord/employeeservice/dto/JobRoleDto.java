@@ -10,14 +10,22 @@ public class JobRoleDto {
 	
 	private BigDecimal payHour;
     
-	
-	
-	private BigDecimal prize;
+	private BigDecimal prizePercentage;
 	
 	private int holiday;
 
 	private BigDecimal holidayDayPercentage;
 	
+	private Long enterpriseId;
+	
+	public Long getEnterpriseId() {
+		return enterpriseId;
+	}
+
+	public void setEnterpriseId(Long enterpriseId) {
+		this.enterpriseId = enterpriseId;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -44,12 +52,12 @@ public class JobRoleDto {
 
 	
 
-	public BigDecimal getPrize() {
-		return prize;
+	public BigDecimal getPrizePercentage() {
+		return prizePercentage;
 	}
 
-	public void setPrize(BigDecimal prize) {
-		this.prize = prize;
+	public void setPrizePercentage(BigDecimal prizePercentage) {
+		this.prizePercentage = prizePercentage;
 	}
 
 	public int getHoliday() {

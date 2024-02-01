@@ -31,6 +31,8 @@ public class Employee {
 	@OneToOne(cascade = CascadeType.MERGE,fetch = FetchType.LAZY)
 	@JoinColumn(name="job_role_id", referencedColumnName = "id")
 	private JobRole jobRole;
+	
+	private Long enterpriseId;
 
 	public Long getId() {
 		return id;
@@ -86,6 +88,14 @@ public class Employee {
 
 	public void setJobRole(JobRole jobRole) {
 		this.jobRole = jobRole;
+	}
+
+	public Long getEnterpriseId() {
+		return enterpriseId;
+	}
+
+	public void setEnterpriseId(Long enterpriseId) {
+		this.enterpriseId = enterpriseId;
 	}
 	
 	

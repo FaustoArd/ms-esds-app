@@ -2,22 +2,10 @@ package com.lord.userservice.model;
 
 import java.util.Set;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+public class UserAppResponse {
 
-@Entity
-@Table(name="users")
-public class UserApp {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+		private Long id;
 	
 	private String name;
 	
@@ -29,14 +17,7 @@ public class UserApp {
 	
 	private String password;
 	
-	@Column(name="enterprises_id")
 	private Set<Long> enterprisesId;
-	
-
-
-	public UserApp() {
-		super();
-	}
 
 	public Long getId() {
 		return id;
@@ -85,6 +66,7 @@ public class UserApp {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	public Set<Long> getEnterprisesId() {
 		return enterprisesId;
 	}
@@ -92,7 +74,5 @@ public class UserApp {
 	public void setEnterprisesId(Set<Long> enterprisesId) {
 		this.enterprisesId = enterprisesId;
 	}
-	
-	
 	
 }
