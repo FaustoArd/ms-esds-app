@@ -10,6 +10,8 @@ public class EnterpriseDto {
 	
 	private Address address;
 	
+	private Long userId;
+	
 	private String socialName;
 	
 	private String responsible;
@@ -34,6 +36,15 @@ public class EnterpriseDto {
 
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+
+	
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
 	public String getSocialName() {

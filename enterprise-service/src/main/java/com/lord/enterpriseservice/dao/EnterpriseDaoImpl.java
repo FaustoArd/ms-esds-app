@@ -3,11 +3,13 @@ package com.lord.enterpriseservice.dao;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.lord.enterpriseservice.exception.EnterpriseNotFoundException;
 import com.lord.enterpriseservice.model.Enterprise;
 import com.lord.enterpriseservice.repository.EnterpriseRepository;
 
+@Service
 public class EnterpriseDaoImpl implements EnterpriseDao {
 
 	

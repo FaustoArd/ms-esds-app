@@ -30,6 +30,12 @@ public class AddressController {
 		this.addressService = addressService;
 	}
 	
+	@GetMapping("/by_id/{id}")
+	ResponseEntity<AddressResponse> findAddressById(@PathVariable("id")Long id){
+		AddressResponse response = addressService.findAddressById(id);
+		return ResponseEntity.ok(response);
+	}
+	
 	@GetMapping("/by_provider/{providerId}")
 	ResponseEntity<AddressResponse> findAddressByProviderId(@PathVariable("providerId")Long providerId){
 		AddressResponse addressResponse = addressService.getByProviderId(providerId);

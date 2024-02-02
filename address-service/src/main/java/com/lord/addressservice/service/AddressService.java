@@ -14,5 +14,5 @@ public interface AddressService {
 	
 	public List<AddressCompleteResultResponse> getFullAddressesFromTextSearch(String address);
 		
-	
+	public AddressResponse findAddressById(Long id);
 }

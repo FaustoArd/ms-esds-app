@@ -63,5 +63,11 @@ public class AddressServiceImpl implements AddressService {
 				});
 		return results.block();
 	}
+
+	@Override
+	public AddressResponse findAddressById(Long id) {
+	Address address = addressDao.findById(id);
+	return addressMapper.addressToResponse(address);
+	}
 }
 

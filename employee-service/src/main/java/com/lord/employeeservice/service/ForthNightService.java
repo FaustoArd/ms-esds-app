@@ -11,4 +11,6 @@ public interface ForthNightService {
 	public FortNightResponse createForthNight(FortNightDto fortNightDto);
 	
 	public Fortnight calculate(FortNightDto fortNightDto,JobRole jobRole,Deduction deduction);
+	
+	public FortNightResponse findFortNightById(Long id);
 }

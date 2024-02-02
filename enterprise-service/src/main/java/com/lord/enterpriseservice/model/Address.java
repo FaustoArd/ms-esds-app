@@ -4,7 +4,7 @@ public class Address {
 	
 	private Long id;
 	
-	private Long customerId;
+	private Long enterpriseId;
 
 	private String street;
 
@@ -23,12 +23,12 @@ public class Address {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Long getCustomerId() {
-		return customerId;
+	public Long getEnterpriseId() {
+		return enterpriseId;
 	}
 
-	public void setCustomerId(Long customerId) {
-		this.customerId = customerId;
+	public void setEnterpriseId(Long enterpriseId) {
+		this.enterpriseId = enterpriseId;
 	}
 
 	public String getStreet() {

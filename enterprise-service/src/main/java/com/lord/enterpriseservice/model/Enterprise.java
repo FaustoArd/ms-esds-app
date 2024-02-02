@@ -16,6 +16,8 @@ public class Enterprise {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	private Long userId;
+	
 	private Long addressId;
 	
 	private String socialName;
@@ -47,6 +49,16 @@ public class Enterprise {
 
 	public void setAddressId(Long addressId) {
 		this.addressId = addressId;
+	}
+	
+	
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
 	public String getSocialName() {

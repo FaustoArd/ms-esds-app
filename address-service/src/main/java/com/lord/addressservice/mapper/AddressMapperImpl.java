@@ -49,6 +49,7 @@ public class AddressMapperImpl implements AddressMapper {
 			return null;
 		}
 		AddressResponse addressResponse = new AddressResponse();
+		addressResponse.setId(address.getId());
 		addressResponse.setStreet(address.getStreet());
 		addressResponse.setHouseNumber(address.getHouseNumber());
 		addressResponse.setgMapsFullname(address.getgMapsFullname());

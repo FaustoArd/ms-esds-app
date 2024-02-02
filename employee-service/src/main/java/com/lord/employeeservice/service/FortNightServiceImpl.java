@@ -76,4 +76,10 @@ public class FortNightServiceImpl implements ForthNightService {
 		return fortnight;
 	}
 
+	@Override
+	public FortNightResponse findFortNightById(Long id) {
+		Fortnight fortnight =  fortNightDao.findById(id);
+		return FortNightMapper.INSTANCE.fortNightToResponse(fortnight);
+	}
+
 }

@@ -2,10 +2,12 @@ package com.lord.enterpriseservice.dto;
 
 import java.util.Calendar;
 
+import com.lord.enterpriseservice.model.Address;
+
 public class EnterpriseResponse {
 	private Long id;
 	
-	private Long addressId;
+	private Long userId;
 	
 	private String socialName;
 	
@@ -16,6 +18,8 @@ public class EnterpriseResponse {
 	private String cuit;
 	
 	private String cuil;
+	
+	private Address address;
 
 	public Long getId() {
 		return id;
@@ -25,12 +29,15 @@ public class EnterpriseResponse {
 		this.id = id;
 	}
 
-	public Long getAddressId() {
-		return addressId;
+	
+
+	
+	public Long getUserId() {
+		return userId;
 	}
 
-	public void setAddressId(Long addressId) {
-		this.addressId = addressId;
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
 	public String getSocialName() {
@@ -71,6 +78,14 @@ public class EnterpriseResponse {
 
 	public void setCuil(String cuil) {
 		this.cuil = cuil;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 	
 }

@@ -1,39 +1,64 @@
 package com.lord.enterpriseservice.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
-
+import org.springframework.web.reactive.function.client.WebClient;
 import com.lord.enterpriseservice.dao.EnterpriseDao;
 import com.lord.enterpriseservice.dto.EnterpriseDto;
 import com.lord.enterpriseservice.dto.EnterpriseResponse;
+import com.lord.enterpriseservice.mapper.EnterpriseMapper;
 import com.lord.enterpriseservice.model.Address;
+import com.lord.enterpriseservice.model.Enterprise;
+
+import reactor.core.publisher.Mono;
 
 @Service
 public class EnterpriseServiceImpl implements EnterpriseService {
 	
 	@Autowired
 	private final EnterpriseDao enterpriseDao;
+	
+	@Autowired
+	private final EnterpriseMapper enterpriseMapper;
+	
+	private final WebClient webClient;
 
-	public EnterpriseServiceImpl(EnterpriseDao enterpriseDao) {
+	public EnterpriseServiceImpl(EnterpriseDao enterpriseDao,EnterpriseMapper enterpriseMapper
+			,WebClient.Builder webClientBuilder) {
 		this.enterpriseDao = enterpriseDao;
+		this.enterpriseMapper = enterpriseMapper;
+		this.webClient = webClientBuilder.baseUrl("http://localhost:8090").build();
 	}
 
 	@Override
-	public String saveEnterprise(EnterpriseDto enterpriseDto) {
-		// TODO Auto-generated method stub
-		return null;
+	public String createEnterprise(EnterpriseDto enterpriseDto) {
+		Enterprise enterprise = enterpriseMapper.dtoToEnterprise(enterpriseDto);
+		Address address = createAddress(enterpriseDto.getAddress());
+		enterprise.setAddressId(address.getId());
+		Enterprise savedEnterprise = enterpriseDao.save(enterprise);
+		return savedEnterprise.getSocialName();
 	}
 
 	@Override
 	public EnterpriseResponse findEnterpriseById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		Enterprise enterprise = enterpriseDao.findById(id);
+		Address address = findAddress(enterprise.getAddressId());
+		return enterpriseMapper.enterpriseToResponse(enterprise, address);
 	}
 
 	@Override
-	public String saveAddress(Address address) {
-		// TODO Auto-generated method stub
-		return null;
+	public Address createAddress(Address address) {
+		Mono<Address> response = webClient.post().uri("/api/address/")
+				.contentType(MediaType.APPLICATION_JSON).bodyValue(address).retrieve()
+				.bodyToMono(Address.class);
+		return response.block();
+	}
+
+	@Override
+	public Address findAddress(Long addressId) {
+	Mono<Address> response = webClient.get().uri("/api/address/by_id/{id}").retrieve().bodyToMono(Address.class);
+	return response.block();
 	}
 	
 	
