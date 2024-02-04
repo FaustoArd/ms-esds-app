@@ -1,5 +1,7 @@
 package com.lord.enterpriseservice.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
@@ -44,7 +46,7 @@ public class EnterpriseServiceImpl implements EnterpriseService {
 	public EnterpriseResponse findEnterpriseById(Long id) {
 		Enterprise enterprise = enterpriseDao.findById(id);
 		Address address = findAddress(enterprise.getAddressId());
-		return enterpriseMapper.enterpriseToResponse(enterprise, address);
+		return enterpriseMapper.enterpriseToFullResponse(enterprise, address);
 	}
 
 	@Override
@@ -59,6 +61,12 @@ public class EnterpriseServiceImpl implements EnterpriseService {
 	public Address findAddress(Long addressId) {
 	Mono<Address> response = webClient.get().uri("/api/address/by_id/{id}").retrieve().bodyToMono(Address.class);
 	return response.block();
+	}
+
+	@Override
+	public List<EnterpriseResponse> findEnterprisesByUserId(Long id) {
+		List<Enterprise> enterprises = enterpriseDao.findAll();
+		return enterpriseMapper.enterprisesToResponses(enterprises);
 	}
 	
 	

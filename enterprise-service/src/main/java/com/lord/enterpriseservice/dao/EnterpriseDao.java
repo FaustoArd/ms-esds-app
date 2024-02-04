@@ -10,6 +10,8 @@ public interface EnterpriseDao {
 	
 	public Enterprise findById(Long id);
 	
+	public List<Enterprise> findByUserId(Long id);
+	
 	public List<Enterprise> findAll();
 	
 	public void deleteById(Long id);

@@ -3,12 +3,15 @@ package com.lord.employeeservice.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.google.gson.Gson;
 import com.lord.employeeservice.dto.DeductionDto;
+import com.lord.employeeservice.dto.DeductionResponse;
 import com.lord.employeeservice.service.DeductionService;
 
 @RestController
@@ -31,5 +34,10 @@ public class DeductionController {
 	ResponseEntity<String> createDeduction(@RequestBody DeductionDto deductionDto){
 		String response = deductionService.createDeduction(deductionDto);
 		return new ResponseEntity<String>(gson.toJson(response),HttpStatus.CREATED);
+	}
+	@GetMapping("/deduction_by_id/{id}")
+	ResponseEntity<DeductionResponse> findDeductionById(@PathVariable("id")Long id){
+		DeductionResponse response = deductionService.findDeductionbyId(id);
+		return ResponseEntity.ok(response);
 	}
 }

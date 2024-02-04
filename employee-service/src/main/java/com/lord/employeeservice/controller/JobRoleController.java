@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,6 +40,12 @@ public class JobRoleController {
 	ResponseEntity<List<JobRoleResponse>> findAllJobRoles(){
 		List<JobRoleResponse> responses = jobRoleService.findallJobRoles();
 		return ResponseEntity.ok(responses);
+	}
+	
+	@GetMapping("/job_role_by_id/{id}")
+	ResponseEntity<JobRoleResponse> findJobRoleById(@PathVariable("id")Long id){
+		JobRoleResponse response = jobRoleService.findJobRoleById(id);
+		return ResponseEntity.ok(response);
 	}
 
 }

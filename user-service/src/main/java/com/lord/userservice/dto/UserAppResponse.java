@@ -1,4 +1,4 @@
-package com.lord.userservice.model;
+package com.lord.userservice.dto;
 
 import java.util.Set;
 

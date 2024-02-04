@@ -1,5 +1,7 @@
 package com.lord.enterpriseservice.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +40,12 @@ public class EnterpriseController {
 	ResponseEntity<EnterpriseResponse> findEnterpriseById(@PathVariable("id")Long id){
 		EnterpriseResponse response = enterpriseService.findEnterpriseById(id);
 		return ResponseEntity.ok(response);
+	}
+	
+	@GetMapping("/enterprise_by_user_id/{id}")
+	ResponseEntity<List<EnterpriseResponse>> findEnterprisesByUserId(@PathVariable("id")Long id){
+		List<EnterpriseResponse> responses = enterpriseService.findEnterprisesByUserId(id);
+		return ResponseEntity.ok(responses);
 	}
 	
 }

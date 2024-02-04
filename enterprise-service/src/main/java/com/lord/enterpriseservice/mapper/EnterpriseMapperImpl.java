@@ -1,5 +1,7 @@
 package com.lord.enterpriseservice.mapper;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.lord.enterpriseservice.dto.EnterpriseDto;
@@ -18,15 +20,31 @@ public class EnterpriseMapperImpl implements EnterpriseMapper {
 		Enterprise enterprise = new Enterprise();
 		enterprise.setId(enterpriseDto.getId());
 		enterprise.setSocialName(enterpriseDto.getSocialName());
-		enterprise.setResponsible(enterprise.getResponsible());
-		enterprise.setStartDate(enterprise.getStartDate());
+		enterprise.setResponsible(enterpriseDto.getResponsible());
+		enterprise.setStartDate(enterpriseDto.getStartDate());
 		enterprise.setCuil(enterpriseDto.getCuil());
 		enterprise.setCuit(enterpriseDto.getCuit());
 		return enterprise;
 	}
+	
+	@Override
+	public EnterpriseResponse enterpriseToResponse(Enterprise enterprise) {
+		if(enterprise==null) {
+			return null;
+		}
+		EnterpriseResponse response = new EnterpriseResponse();
+		response.setId(enterprise.getId());
+		response.setCuil(enterprise.getCuil());
+		response.setCuit(enterprise.getCuit());
+		response.setResponsible(enterprise.getResponsible());
+		response.setSocialName(enterprise.getSocialName());
+		response.setStartDate(enterprise.getStartDate());
+		response.setUserId(enterprise.getUserId());
+		return response;
+	}
 
 	@Override
-	public EnterpriseResponse enterpriseToResponse(Enterprise enterprise,Address address) {
+	public EnterpriseResponse enterpriseToFullResponse(Enterprise enterprise,Address address) {
 		if(enterprise==null) {
 			return null;
 		}
@@ -41,5 +59,17 @@ public class EnterpriseMapperImpl implements EnterpriseMapper {
 		response.setUserId(enterprise.getUserId());
 		return response;
 	}
+	
+
+	@Override
+	public List<EnterpriseResponse> enterprisesToResponses(List<Enterprise> enterprises) {
+		if(enterprises==null) {
+			return null;
+		}
+		List<EnterpriseResponse> responses = enterprises.stream().map(this::enterpriseToResponse).toList();
+		return responses;
+	}
+
+
 
 }

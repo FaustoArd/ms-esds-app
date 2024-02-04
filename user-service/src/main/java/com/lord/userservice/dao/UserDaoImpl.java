@@ -44,6 +44,11 @@ public class UserDaoImpl implements UserDao {
 			throw new UserNotFoundException(userNotFound);
 		}
 	}
+
+	@Override
+	public UserApp findByUsername(String username) {
+		return userRepository.findByUsername(username).orElseThrow(()-> new UserNotFoundException(userNotFound));
+	}
 	
 	
 
