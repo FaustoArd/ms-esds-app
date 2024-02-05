@@ -51,4 +51,10 @@ public class EmployeeController {
 		return ResponseEntity.ok(response);
 	}
 	
+	@GetMapping("/employee_by_enterprise_id/{enterpriseId}")
+	ResponseEntity<List<EmployeeResponse>> findEnterpriseById(@PathVariable("enterpriseId")Long enterpriseId){
+		List<EmployeeResponse> responses = employeeService.findByEnterpriseId(enterpriseId);
+		return ResponseEntity.ok(responses);
+	}
+	
 }

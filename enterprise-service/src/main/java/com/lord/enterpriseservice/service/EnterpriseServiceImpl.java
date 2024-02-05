@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import com.lord.enterpriseservice.dao.EnterpriseDao;
+import com.lord.enterpriseservice.dto.EnterpriseCreateResponse;
 import com.lord.enterpriseservice.dto.EnterpriseDto;
 import com.lord.enterpriseservice.dto.EnterpriseResponse;
 import com.lord.enterpriseservice.mapper.EnterpriseMapper;
@@ -34,12 +35,12 @@ public class EnterpriseServiceImpl implements EnterpriseService {
 	}
 
 	@Override
-	public String createEnterprise(EnterpriseDto enterpriseDto) {
+	public EnterpriseCreateResponse createEnterprise(EnterpriseDto enterpriseDto) {
 		Enterprise enterprise = enterpriseMapper.dtoToEnterprise(enterpriseDto);
 		Address address = createAddress(enterpriseDto.getAddress());
 		enterprise.setAddressId(address.getId());
 		Enterprise savedEnterprise = enterpriseDao.save(enterprise);
-		return savedEnterprise.getSocialName();
+		return enterpriseMapper.enterpriseToEnterpriseCreateResponse(savedEnterprise);
 	}
 
 	@Override

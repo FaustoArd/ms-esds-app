@@ -46,4 +46,9 @@ public class FortNightDaoImpl implements FortNightDao{
 		
 	}
 
+	@Override
+	public List<Fortnight> findByEnterpriseId(Long enterpriseId) {
+		return (List<Fortnight>) forthNightRepository.findByEnterpriseId(enterpriseId);
+	}
+
 }

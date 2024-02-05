@@ -47,4 +47,9 @@ public class JobRoleDaoImpl implements JobRoleDao {
 
 	}
 
+	@Override
+	public List<JobRole> findByEnterpriseId(Long enterpriseId) {
+		return (List<JobRole>) jobRoleRepository.findByEnterpriseId(enterpriseId);
+	}
+
 }

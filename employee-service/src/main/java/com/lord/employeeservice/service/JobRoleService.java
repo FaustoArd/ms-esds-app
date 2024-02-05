@@ -12,4 +12,6 @@ public interface JobRoleService {
 	public JobRoleResponse findJobRoleById(Long id);
 	
 	public List<JobRoleResponse> findallJobRoles();
+	
+	public List<JobRoleResponse> findByEnterpriseId(Long enterpriseId);
 }

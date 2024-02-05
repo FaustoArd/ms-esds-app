@@ -16,5 +16,7 @@ public interface DeductionDao {
 	public void deleteById(Long id);
 	
 	public Deduction findByJobRole(JobRole jobRole);
+	
+	public List<Deduction> findByEnterpriseId(Long enterpriseId);
 
 }

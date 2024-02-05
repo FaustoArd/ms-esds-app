@@ -71,6 +71,8 @@ public class Fortnight {
 	@ManyToOne(cascade =  CascadeType.MERGE,fetch = FetchType.LAZY)
 	@JoinColumn(name="employee_id", referencedColumnName = "id")
 	private Employee employee;
+	
+	private Long enterpriseId;
 
 	public Long getId() {
 		return id;
@@ -261,7 +263,7 @@ public class Fortnight {
 		return fortNightDateText;
 	}
 
-	public void setForthNightDateText(String fortNightDateText) {
+	public void setFortNightDateText(String fortNightDateText) {
 		this.fortNightDateText = fortNightDateText;
 	}
 
@@ -272,6 +274,16 @@ public class Fortnight {
 	public void setTotalPayText(String totalPayText) {
 		this.totalPayText = totalPayText;
 	}
+
+	public Long getEnterpriseId() {
+		return enterpriseId;
+	}
+
+	public void setEnterpriseId(Long enterpriseId) {
+		this.enterpriseId = enterpriseId;
+	}
+
+	
 	
 	
 }

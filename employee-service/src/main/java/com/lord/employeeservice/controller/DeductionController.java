@@ -1,5 +1,7 @@
 package com.lord.employeeservice.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +40,11 @@ public class DeductionController {
 	@GetMapping("/deduction_by_id/{id}")
 	ResponseEntity<DeductionResponse> findDeductionById(@PathVariable("id")Long id){
 		DeductionResponse response = deductionService.findDeductionbyId(id);
+		return ResponseEntity.ok(response);
+	}
+	@GetMapping("/deduction_by_enterprise_id/{enterpriseId}")
+	ResponseEntity<List<DeductionResponse>> findEnterpriseById(@PathVariable("enterpriseId")Long enterpriseId){
+		List<DeductionResponse>  response = deductionService.findByEnterpriseId(enterpriseId);
 		return ResponseEntity.ok(response);
 	}
 }

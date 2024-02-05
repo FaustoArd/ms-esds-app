@@ -1,5 +1,7 @@
 package com.lord.employeeservice.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.lord.employeeservice.dto.FortNightDto;
 import com.lord.employeeservice.dto.FortNightResponse;
 import com.lord.employeeservice.service.ForthNightService;
@@ -35,6 +36,12 @@ public class FortNightController {
 	ResponseEntity<FortNightResponse> findFortNightById(@PathVariable("id")Long id){
 		FortNightResponse response = forthNightService.findFortNightById(id);
 		return ResponseEntity.ok(response);
+	}
+	
+	@GetMapping("/fort_night_by_enterprise_id/{enterpriseId}")
+	ResponseEntity<List<FortNightResponse>> findEnterpriseById(@PathVariable("enterpriseId")Long enterpriseId){
+		List<FortNightResponse> responses = forthNightService.findByEnterpriseId(enterpriseId);
+		return ResponseEntity.ok(responses);
 	}
 
 }

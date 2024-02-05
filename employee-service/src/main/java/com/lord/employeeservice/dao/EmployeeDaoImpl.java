@@ -47,4 +47,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		
 	}
 
+	@Override
+	public List<Employee> findByEnterpriseId(Long enterpriseId) {
+		return (List<Employee>) employeeRepository.findByEnterpriseId(enterpriseId);
+	}
+
 }

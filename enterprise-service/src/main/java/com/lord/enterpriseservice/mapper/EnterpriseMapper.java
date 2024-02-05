@@ -2,6 +2,7 @@ package com.lord.enterpriseservice.mapper;
 
 import java.util.List;
 
+import com.lord.enterpriseservice.dto.EnterpriseCreateResponse;
 import com.lord.enterpriseservice.dto.EnterpriseDto;
 import com.lord.enterpriseservice.dto.EnterpriseResponse;
 import com.lord.enterpriseservice.model.Address;
@@ -16,5 +17,7 @@ public interface EnterpriseMapper {
 	public EnterpriseResponse enterpriseToFullResponse(Enterprise enterprise,Address address);
 	
 	public List<EnterpriseResponse> enterprisesToResponses(List<Enterprise> enterprises);
+	
+	public EnterpriseCreateResponse enterpriseToEnterpriseCreateResponse(Enterprise enterprise);
 
 }

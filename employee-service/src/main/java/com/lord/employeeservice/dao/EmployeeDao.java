@@ -12,4 +12,6 @@ public Employee save(Employee employee);
 	public List<Employee> findAll();
 	
 	public void deleteById(Long id);
+	
+	public List<Employee> findByEnterpriseId(Long enterpriseId);
 }

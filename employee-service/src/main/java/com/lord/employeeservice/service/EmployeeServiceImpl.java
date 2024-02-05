@@ -58,6 +58,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return EmployeeMapper.INSTANCE.employeesToResponses(employees);
 	}
 
+	@Override
+	public List<EmployeeResponse> findByEnterpriseId(Long enterpriseId) {
+		List<Employee> employees = employeeDao.findByEnterpriseId(enterpriseId);
+		return EmployeeMapper.INSTANCE.employeesToResponses(employees);
+	}
+
 	
 
 	

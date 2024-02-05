@@ -14,4 +14,6 @@ public interface FortNightDao {
 	public List<Fortnight> findAll();
 	
 	public void deleteById(Long id);
+	
+	public List<Fortnight> findByEnterpriseId(Long enterpriseId);
 }

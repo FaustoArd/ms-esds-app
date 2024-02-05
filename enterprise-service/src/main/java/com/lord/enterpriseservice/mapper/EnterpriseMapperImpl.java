@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import com.lord.enterpriseservice.dto.EnterpriseCreateResponse;
 import com.lord.enterpriseservice.dto.EnterpriseDto;
 import com.lord.enterpriseservice.dto.EnterpriseResponse;
 import com.lord.enterpriseservice.model.Address;
@@ -69,6 +70,19 @@ public class EnterpriseMapperImpl implements EnterpriseMapper {
 		List<EnterpriseResponse> responses = enterprises.stream().map(this::enterpriseToResponse).toList();
 		return responses;
 	}
+
+	@Override
+	public EnterpriseCreateResponse enterpriseToEnterpriseCreateResponse(Enterprise enterprise) {
+		if(enterprise==null) {
+			return null;
+		}
+		EnterpriseCreateResponse response = new EnterpriseCreateResponse();
+		response.setId(enterprise.getId());
+		response.setSocialName(enterprise.getSocialName());
+		return response;
+	}
+
+	
 
 
 

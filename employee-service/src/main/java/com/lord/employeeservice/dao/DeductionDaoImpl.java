@@ -1,5 +1,6 @@
 package com.lord.employeeservice.dao;
 
+import java.lang.invoke.CallSite;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,6 +51,12 @@ public class DeductionDaoImpl implements DeductionDao{
 	public Deduction findByJobRole(JobRole jobRole) {
 		return deductionRepository.findByJobRole(jobRole)
 				.orElseThrow(() -> new ItemNotFoundException(deductionNotFound));
+	}
+
+	@Override
+	public List<Deduction> findByEnterpriseId(Long enterpriseId) {
+		return (List<Deduction>)deductionRepository.findByEnterpriseId(enterpriseId);
+				
 	}
 
 }

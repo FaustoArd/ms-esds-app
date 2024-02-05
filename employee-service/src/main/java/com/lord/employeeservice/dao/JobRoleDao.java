@@ -12,4 +12,6 @@ public JobRole save(JobRole jobRole);
 	public List<JobRole> findAll();
 	
 	public void deleteById(Long id);
+	
+	public List<JobRole> findByEnterpriseId(Long enterpriseId);
 }

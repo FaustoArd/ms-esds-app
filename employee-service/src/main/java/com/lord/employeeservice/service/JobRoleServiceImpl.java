@@ -49,4 +49,10 @@ public class JobRoleServiceImpl implements JobRoleService {
 		
 	}
 
+	@Override
+	public List<JobRoleResponse> findByEnterpriseId(Long enterpriseId) {
+		List<JobRole> jobRoles = jobRoleDao.findByEnterpriseId(enterpriseId);
+		return JobRoleMapper.INSTANCE.jobRolesToResponses(jobRoles);
+	}
+
 }

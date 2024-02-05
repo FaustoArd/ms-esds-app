@@ -55,4 +55,10 @@ public class DeductionServiceImpl implements DeductionService {
 		return DeductionMapper.INSTANCE.deductionsToResponses(deductions);
 	}
 
+	@Override
+	public List<DeductionResponse> findByEnterpriseId(Long enterpriseId) {
+		List<Deduction> deductions = deductionDao.findByEnterpriseId(enterpriseId);
+		return DeductionMapper.INSTANCE.deductionsToResponses(deductions);
+	}
+
 }

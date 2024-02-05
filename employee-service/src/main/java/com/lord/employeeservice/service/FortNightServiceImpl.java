@@ -1,6 +1,8 @@
 package com.lord.employeeservice.service;
 
 import java.math.BigDecimal;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.lord.employeeservice.dao.DeductionDao;
@@ -80,6 +82,12 @@ public class FortNightServiceImpl implements ForthNightService {
 	public FortNightResponse findFortNightById(Long id) {
 		Fortnight fortnight =  fortNightDao.findById(id);
 		return FortNightMapper.INSTANCE.fortNightToResponse(fortnight);
+	}
+
+	@Override
+	public List<FortNightResponse> findByEnterpriseId(Long enterpriseId) {
+	List<Fortnight> fortnights = fortNightDao.findByEnterpriseId(enterpriseId);
+	return FortNightMapper.INSTANCE.fortNightsToResponses(fortnights);
 	}
 
 }

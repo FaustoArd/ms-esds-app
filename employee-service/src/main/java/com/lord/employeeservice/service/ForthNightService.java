@@ -1,5 +1,8 @@
 package com.lord.employeeservice.service;
 
+
+import java.util.List;
+
 import com.lord.employeeservice.dto.FortNightDto;
 import com.lord.employeeservice.dto.FortNightResponse;
 import com.lord.employeeservice.model.Deduction;
@@ -13,4 +16,6 @@ public interface ForthNightService {
 	public Fortnight calculate(FortNightDto fortNightDto,JobRole jobRole,Deduction deduction);
 	
 	public FortNightResponse findFortNightById(Long id);
+	
+	public List<FortNightResponse> findByEnterpriseId(Long enterpriseId);
 }

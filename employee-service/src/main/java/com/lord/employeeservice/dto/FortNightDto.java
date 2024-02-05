@@ -17,6 +17,8 @@ public class FortNightDto {
 	private int extrasQuantity50;
 	
 	private int extrasQuantity100;
+	
+	private Long enterpriseId;
 
 	public Long getId() {
 		return id;
@@ -73,6 +75,14 @@ public class FortNightDto {
 
 	public void setFortNightDateText(String fortNightDateText) {
 		this.fortNightDateText = fortNightDateText;
+	}
+
+	public Long getEnterpriseId() {
+		return enterpriseId;
+	}
+
+	public void setEnterpriseId(Long enterpriseId) {
+		this.enterpriseId = enterpriseId;
 	}
 	
 	

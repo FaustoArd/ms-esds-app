@@ -12,4 +12,6 @@ public interface DeductionService {
 	public DeductionResponse findDeductionbyId(Long id);
 	
 	public List<DeductionResponse> findAllDeductions();
+	
+	public List<DeductionResponse> findByEnterpriseId(Long enterpriseId);
 }

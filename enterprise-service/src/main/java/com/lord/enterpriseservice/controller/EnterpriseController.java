@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
+import com.lord.enterpriseservice.dto.EnterpriseCreateResponse;
 import com.lord.enterpriseservice.dto.EnterpriseDto;
 import com.lord.enterpriseservice.dto.EnterpriseResponse;
 import com.lord.enterpriseservice.service.EnterpriseService;
@@ -31,9 +32,9 @@ public class EnterpriseController {
 	}
 
 	@PostMapping("/enterprise_create")
-	ResponseEntity<String> createEnterprise(@RequestBody EnterpriseDto enterpriseDto){
-		String  response = enterpriseService.createEnterprise(enterpriseDto);
-		return new ResponseEntity<String>(gson.toJson(response),HttpStatus.CREATED);
+	ResponseEntity<EnterpriseCreateResponse> createEnterprise(@RequestBody EnterpriseDto enterpriseDto){
+		EnterpriseCreateResponse  response = enterpriseService.createEnterprise(enterpriseDto);
+		return new ResponseEntity<EnterpriseCreateResponse>(response,HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/enterprise_by_id/{id}")

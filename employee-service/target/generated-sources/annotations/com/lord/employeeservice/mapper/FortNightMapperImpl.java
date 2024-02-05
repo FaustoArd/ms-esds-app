@@ -10,7 +10,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-01-31T23:59:45-0300",
+    date = "2024-02-04T13:41:41-0300",
     comments = "version: 1.6.0.Beta1, compiler: Eclipse JDT (IDE) 3.34.0.v20230523-1233, environment: Java 17.0.7 (Oracle Corporation)"
 )
 public class FortNightMapperImpl implements FortNightMapper {
@@ -24,11 +24,13 @@ public class FortNightMapperImpl implements FortNightMapper {
         Fortnight fortnight = new Fortnight();
 
         fortnight.setEmployee( fortNightDtoToEmployee( fortNightDto ) );
-        fortnight.setId( fortNightDto.getId() );
-        fortnight.setHoursQuantity( fortNightDto.getHoursQuantity() );
-        fortnight.setExtrasQuantity50( fortNightDto.getExtrasQuantity50() );
-        fortnight.setExtrasQuantity100( fortNightDto.getExtrasQuantity100() );
         fortnight.setDate( fortNightDto.getDate() );
+        fortnight.setEnterpriseId( fortNightDto.getEnterpriseId() );
+        fortnight.setExtrasQuantity100( fortNightDto.getExtrasQuantity100() );
+        fortnight.setExtrasQuantity50( fortNightDto.getExtrasQuantity50() );
+        fortnight.setFortNightDateText( fortNightDto.getFortNightDateText() );
+        fortnight.setHoursQuantity( fortNightDto.getHoursQuantity() );
+        fortnight.setId( fortNightDto.getId() );
 
         return fortnight;
     }

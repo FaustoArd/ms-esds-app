@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.google.gson.Gson;
 import com.lord.employeeservice.dto.JobRoleDto;
 import com.lord.employeeservice.dto.JobRoleResponse;
@@ -46,6 +45,12 @@ public class JobRoleController {
 	ResponseEntity<JobRoleResponse> findJobRoleById(@PathVariable("id")Long id){
 		JobRoleResponse response = jobRoleService.findJobRoleById(id);
 		return ResponseEntity.ok(response);
+	}
+	
+	@GetMapping("/job_role_by_enterprise_id/{enterpriseId}")
+	ResponseEntity<List<JobRoleResponse>> findEnterpriseById(@PathVariable("enterpriseId")Long enterpriseId){
+		List<JobRoleResponse> responses = jobRoleService.findByEnterpriseId(enterpriseId);
+		return ResponseEntity.ok(responses);
 	}
 
 }
