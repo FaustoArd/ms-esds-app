@@ -2,6 +2,7 @@
 Enterprise Statistic Data System Application
 
 Sistema para control de Empresas PYME, armado de presupuestos ,control de sueldos y liquidaciones.
+
 Arquitectura: Micro servicios
 Lenguajes: Java,TypeScript
 Frameworks: SpringBoot, Angular CLI 16
